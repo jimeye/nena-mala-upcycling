@@ -8,17 +8,23 @@ export default function HeroSlider() {
     {
       image: '/nena-mala-hero-static-acceuil.webp',
       title: 'upcycling. crafted. conscious.',
-      button: 'shop now'
+      button: 'shop now',
+      position: 'left',
+      verticalPosition: 'center' // Milieu vertical
     },
     {
       image: '/nena-mala-hero-static-acceuil.webp',
       title: 'sustainable fashion',
-      button: 'shop now'
+      button: 'shop now',
+      position: 'center',
+      verticalPosition: 'bottom' // Bas de l'image
     },
     {
       image: '/nena-mala-hero-static-acceuil.webp',
       title: 'limited edition',
-      button: 'shop now'
+      button: 'shop now',
+      position: 'right',
+      verticalPosition: 'top' // Haut de l'image
     }
   ];
 
@@ -65,15 +71,47 @@ export default function HeroSlider() {
             <div className="absolute inset-0 bg-black/10"></div>
             
             {/* Content */}
-            <div className="relative z-10 h-full flex items-center">
-              <div className="w-full h-full flex items-center justify-end">
-                <div className="text-white text-right" style={{ marginRight: '15px' }}>
-                  <p className="text-3xl md:text-5xl font-bold mb-3 tracking-tight">
+            <div className={`relative z-10 h-full flex ${
+              slide.verticalPosition === 'top' ? 'items-start pt-20' :
+              slide.verticalPosition === 'center' ? 'items-center' :
+              'items-end pb-20'
+            } ${slide.title === 'sustainable fashion' && index === currentSlide ? 'animate-flip' : ''} ${slide.title === 'upcycling. crafted. conscious.' && index === currentSlide ? 'animate-explode' : ''}`}>
+              {slide.title === 'upcycling. crafted. conscious.' && index === currentSlide && (
+                <div className="absolute inset-0 pointer-events-none">
+                  <div className="absolute top-1/2 left-1/2 w-2 h-2 bg-white rounded-full animate-ping"></div>
+                  <div className="absolute top-1/3 left-1/3 w-1 h-1 bg-white rounded-full animate-ping" style={{animationDelay: '0.5s'}}></div>
+                  <div className="absolute top-2/3 left-2/3 w-1 h-1 bg-white rounded-full animate-ping" style={{animationDelay: '1s'}}></div>
+                </div>
+              )}
+              <div className={`w-full h-full flex ${
+                slide.position === 'right' ? 'justify-end' :
+                slide.position === 'center' ? 'justify-center' :
+                'justify-start'
+              } ${
+                slide.verticalPosition === 'top' ? 'items-start' :
+                slide.verticalPosition === 'center' ? 'items-center' :
+                'items-end'
+              }`}>
+                <div className={`text-white ${
+                  slide.position === 'right' ? 'text-right' :
+                  slide.position === 'center' ? 'text-center' :
+                  'text-left'
+                }`} style={{ 
+                  marginRight: slide.position === 'right' ? '15px' : '0',
+                  marginLeft: slide.position === 'left' ? '15px' : '0'
+                }}>
+                  <p className="text-3xl md:text-5xl font-bold mb-0 tracking-tight">
                     {slide.title}
                   </p>
-                  <button className="text-xl font-bold tracking-tight hover:no-underline transition-all">
-                    {slide.button}
-                  </button>
+                  <div className={`flex items-center ${
+                    slide.position === 'right' ? 'justify-end' :
+                    slide.position === 'center' ? 'justify-end' :
+                    'justify-end'
+                  }`}>
+                    <span className="text-xl font-bold tracking-tight">
+                      {slide.button}
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
