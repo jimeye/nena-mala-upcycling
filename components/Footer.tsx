@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="bg-white text-black py-8 px-4">
+    <footer className="bg-white text-black py-4 px-4">
       {/* Main Footer Content */}
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
@@ -88,7 +88,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Section - Copyright and Legal */}
-        <div className="border-t border-gray-200 pt-4">
+        <div className="border-t border-gray-200 pt-2">
           <div className="flex flex-col md:flex-row justify-between items-center text-xs" style={{ fontSize: '10px' }}>
             <div className="flex items-center space-x-4 mb-2 md:mb-0">
               <span>© 2025 NENA-MALA PUERTO ESCONDIDO</span>
