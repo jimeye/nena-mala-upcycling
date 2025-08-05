@@ -2,7 +2,7 @@ import './globals.css';
 import { ReactNode } from 'react';
 
 export const metadata = {
-  title: 'Nena Mala - Upcycling & Pièces Limitées',
+  title: 'Nena Mala - Luxury Upcycling & Pièces Limitées',
   description: 'Découvrez nos pièces uniques en upcycling. Pièces limitées disponibles à Puerto Escondido, Paris et Ibiza. Mode éthique et durable.',
   keywords: 'upcycling, mode éthique, pièces limitées, Puerto Escondido, Paris, Ibiza, vêtements durables',
   authors: [{ name: 'Nena Mala' }],
@@ -18,7 +18,7 @@ export const metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'Nena Mala - Upcycling & Pièces Limitées',
+    title: 'Nena Mala - Luxury Upcycling & Pièces Limitées',
     description: 'Découvrez nos pièces uniques en upcycling. Pièces limitées disponibles à Puerto Escondido, Paris et Ibiza.',
     url: 'https://nena-mala.vercel.app',
     siteName: 'Nena Mala',
@@ -35,7 +35,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Nena Mala - Upcycling & Pièces Limitées',
+    title: 'Nena Mala - Luxury Upcycling & Pièces Limitées',
     description: 'Découvrez nos pièces uniques en upcycling. Pièces limitées disponibles à Puerto Escondido, Paris et Ibiza.',
     images: ['/og-image.svg'],
   },
