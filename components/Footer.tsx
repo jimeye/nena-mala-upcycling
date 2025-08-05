@@ -61,6 +61,11 @@ export default function Footer() {
                 </svg>
               </a>
             </div>
+            {/* Phone number under social icons */}
+            <div className="flex items-center space-x-2">
+              <span>📱</span>
+              <a href="tel:+330616993786" className="text-sm text-gray-600 hover:underline">+33 06 16 99 37 86</a>
+            </div>
           </div>
 
           {/* Right Section - Newsletter */}
@@ -100,15 +105,7 @@ export default function Footer() {
             </div>
           </div>
           
-          {/* Contact Information */}
-          <div className="mt-4 text-sm text-gray-600">
-            <div className="flex flex-col md:flex-row md:space-x-6">
-              <div className="flex items-center space-x-2">
-                <span>📱</span>
-                <a href="tel:+330616993786" className="hover:underline">+33 06 16 99 37 86</a>
-              </div>
-            </div>
-          </div>
+
         </div>
       </div>
     </footer>
