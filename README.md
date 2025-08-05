@@ -2,51 +2,56 @@
 
 Site web pour la marque Nena Mala - Upcycling et pièces limitées.
 
-## Concept
+## 🎨 Concept
 - **Marque** : Nena Mala - by Aliya Fellous
 - **Locations** : Puerto Escondido / Paris / Ibiza
 - **Concept** : Upcycling, Pièces limitées
 
-## Technologies
-- Next.js v13.4.12
-- React 18.2.0
-- TailwindCSS
-- TypeScript
+## 🚀 Technologies
+- **Framework** : Next.js 13.4.12
+- **Language** : TypeScript
+- **Styling** : TailwindCSS
+- **Deployment** : Vercel
 
-## Installation
+## 📱 Fonctionnalités
+- **Header** : Navigation transparente avec logo
+- **Slider Hero** : 3 slides avec transitions automatiques
+- **Produits** : 4 produits avec images uniques
+- **Livechat** : Icône ronde avec étoile
+- **Design** : Coins carrés, typographie épurée
+
+## 🛠️ Installation
 
 ```bash
+# Installer les dépendances
 npm install
-```
 
-## Développement
-
-```bash
+# Lancer en développement
 npm run dev
-```
 
-Le site sera accessible sur [http://localhost:3000](http://localhost:3000).
-
-## Build
-
-```bash
+# Build pour production
 npm run build
 ```
 
-## Structure du projet
+## 🌐 Déploiement Vercel
 
+1. Connectez votre repo GitHub à Vercel
+2. Vercel détectera automatiquement Next.js
+3. Déploiement automatique à chaque push
+
+## 📁 Structure
 ```
 ├── app/
-│   ├── globals.css
-│   ├── layout.tsx
-│   └── page.tsx
+│   ├── page.tsx          # Page principale
+│   └── layout.tsx        # Layout global
 ├── components/
-│   ├── Header.tsx
-│   ├── Nav.tsx
-│   ├── ProductGrid.tsx
-│   └── Footer.tsx
-├── package.json
-├── tailwind.config.js
-├── postcss.config.js
-└── tsconfig.json
-``` 
+│   ├── Header.tsx        # Navigation
+│   ├── HeroSlider.tsx    # Slider principal
+│   └── ProductGrid.tsx   # Grille de produits
+└── public/
+    └── *.webp           # Images optimisées
+```
+
+## 👨‍💻 Développeur
+- **Nom** : jimeye
+- **Git** : Configuré avec user.name "jimeye" 
