@@ -7,9 +7,9 @@ export default function Header() {
   // Initialiser les variables CSS au chargement
   useEffect(() => {
     // Définir les variables CSS par défaut
-    document.documentElement.style.setProperty('--header-logo-color', '#000000');
-    document.documentElement.style.setProperty('--header-text-color', '#000000');
-    document.documentElement.style.setProperty('--header-border-color', '#000000');
+    document.documentElement.style.setProperty('--header-logo-color', '#ffffff');
+    document.documentElement.style.setProperty('--header-text-color', '#ffffff');
+    document.documentElement.style.setProperty('--header-border-color', '#ffffff');
   }, []);
 
   useEffect(() => {
@@ -18,20 +18,20 @@ export default function Header() {
       const windowHeight = window.innerHeight;
       
       // Détecter la position pour adapter les couleurs
-      if (scrollY < windowHeight) {
+      if (scrollY < windowHeight * 0.8) {
         // Sur le slider (contenu sombre) : couleurs claires
         setIsOverDarkContent(true);
         document.documentElement.style.setProperty('--header-logo-color', '#ffffff');
         document.documentElement.style.setProperty('--header-text-color', '#ffffff');
         document.documentElement.style.setProperty('--header-border-color', '#ffffff');
         console.log('Header: Couleurs blanches (slider)');
-      } else if (scrollY < windowHeight * 2) {
-        // Sur les produits (contenu clair) : couleurs sombres
-        setIsOverDarkContent(false);
-        document.documentElement.style.setProperty('--header-logo-color', '#000000');
-        document.documentElement.style.setProperty('--header-text-color', '#000000');
-        document.documentElement.style.setProperty('--header-border-color', '#000000');
-        console.log('Header: Couleurs noires (produits)');
+      } else if (scrollY < windowHeight * 2.5) {
+        // Sur les produits (contenu foncé avec images) : couleurs claires
+        setIsOverDarkContent(true);
+        document.documentElement.style.setProperty('--header-logo-color', '#ffffff');
+        document.documentElement.style.setProperty('--header-text-color', '#ffffff');
+        document.documentElement.style.setProperty('--header-border-color', '#ffffff');
+        console.log('Header: Couleurs blanches (produits)');
       } else {
         // Sur le footer (contenu clair) : couleurs sombres
         setIsOverDarkContent(false);
