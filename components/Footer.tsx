@@ -93,6 +93,10 @@ export default function Footer() {
             <div className="flex items-center space-x-4 mb-2 md:mb-0">
               <span>© 2025 NENA-MALA PUERTO ESCONDIDO</span>
               <span className="hidden md:inline">|</span>
+              <span className="hidden md:inline">Website design by</span>
+              <a href="https://studio-jo.com" target="_blank" rel="noopener noreferrer" className="hidden md:inline hover:underline">JOSEPH-STUDIO.COM</a>
+              <span className="hidden md:inline">|</span>
+              <a href="tel:+330608251223" className="hidden md:inline hover:underline">+33 06 08 25 12 23</a>
             </div>
             <div className="flex flex-wrap items-center space-x-4">
               <a href="#" className="hover:underline">Terms of Use</a>
