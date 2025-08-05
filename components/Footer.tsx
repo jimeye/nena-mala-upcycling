@@ -107,12 +107,6 @@ export default function Footer() {
                 <span>📱</span>
                 <a href="tel:+330616993786" className="hover:underline">+33 06 16 99 37 86</a>
               </div>
-              <div className="flex items-center space-x-2">
-                <span>📧</span>
-                <a href="https://www.instagram.com/nenamala___17/" target="_blank" rel="noopener noreferrer" className="hover:underline">
-                  @nenamala___17
-                </a>
-              </div>
             </div>
           </div>
         </div>
