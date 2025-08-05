@@ -57,9 +57,7 @@ export default function Header() {
   }, [lastScrollY]);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isVisible ? 'translate-y-0' : '-translate-y-full'
-    }`}>
+    <header className={`relative z-50 transition-all duration-300`}>
       {/* Navigation supérieure - cadre avec couleurs adaptatives */}
       <div className={`relative z-10 py-4 transition-all duration-300 ${
         isOverDarkContent ? 'bg-transparent' : 'bg-white/95 backdrop-blur-sm'
