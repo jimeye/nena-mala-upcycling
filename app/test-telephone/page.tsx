@@ -217,8 +217,8 @@ export default function TestTelephonePage() {
               textDecoration: 'none',
               transition: 'background-color 0.2s'
             }}
-            onMouseOver={(e) => e.target.style.backgroundColor = '#374151'}
-            onMouseOut={(e) => e.target.style.backgroundColor = 'black'}
+            onMouseOver={(e) => (e.target as HTMLElement).style.backgroundColor = '#374151'}
+            onMouseOut={(e) => (e.target as HTMLElement).style.backgroundColor = 'black'}
           >
             Retour à l'accueil
           </a>
