@@ -6,20 +6,20 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           
           {/* Left Section - Information Links */}
-          <div className="space-y-4">
-            <div className="flex items-center justify-between border-b border-gray-200 pb-2">
+          <div className="space-y-2">
+            <div className="flex items-center justify-between border-b border-gray-200 pb-1">
               <span className="font-medium">Customer Service</span>
               <span className="text-xl">+</span>
             </div>
-            <div className="flex items-center justify-between border-b border-gray-200 pb-2">
+            <div className="flex items-center justify-between border-b border-gray-200 pb-1">
               <span className="font-medium">Brand</span>
               <span className="text-xl">+</span>
             </div>
-            <div className="flex items-center justify-between border-b border-gray-200 pb-2">
+            <div className="flex items-center justify-between border-b border-gray-200 pb-1">
               <span className="font-medium">Student Discount</span>
               <span className="text-xl">+</span>
             </div>
-            <div className="flex items-center justify-between border-b border-gray-200 pb-2">
+            <div className="flex items-center justify-between border-b border-gray-200 pb-1">
               <span className="font-medium">Terms & Conditions</span>
               <span className="text-xl">+</span>
             </div>
