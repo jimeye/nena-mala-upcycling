@@ -80,7 +80,7 @@ export default function Footer() {
                 placeholder="Email" 
                 className="flex-1 px-3 py-2 border border-gray-300 focus:outline-none focus:border-black"
               />
-              <button className="px-4 py-2 bg-black text-white hover:bg-gray-800 transition-colors">
+              <button className="px-4 py-2 bg-white text-black border border-gray-300 hover:bg-gray-100 transition-colors">
                 Submit
               </button>
             </div>
