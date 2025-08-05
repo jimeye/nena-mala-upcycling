@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="bg-white text-black py-4 px-4">
+    <footer className="bg-white text-black py-4 px-5">
       {/* Main Footer Content */}
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
@@ -61,10 +61,17 @@ export default function Footer() {
                 </svg>
               </a>
             </div>
-            {/* Phone number under social icons */}
+            {/* Contact me under social icons */}
             <div className="flex items-center space-x-2">
               <span>📱</span>
-              <a href="tel:+330616993786" className="text-sm text-gray-600 hover:underline">+33 06 16 99 37 86</a>
+              <a 
+                href="https://wa.me/330616993786" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-sm text-gray-600 hover:underline"
+              >
+                Contact me
+              </a>
             </div>
           </div>
 
