@@ -9,7 +9,7 @@ export default function ProductGrid() {
   return (
     <section className="grid grid-cols-1 md:grid-cols-4 gap-1">
       {products.map((product) => (
-        <article key={product.id} className="group relative overflow-hidden shadow-lg">
+        <article key={product.id} className="group relative overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-in-out">
           {/* Image */}
           <div className="aspect-[3/5] bg-gray-200 relative">
             <img 
