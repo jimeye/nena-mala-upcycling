@@ -27,8 +27,8 @@ export default function HomePage() {
       
       {/* Livechat avec étoile en bas à gauche */}
       <div className="fixed bottom-6 left-[15px] z-50">
-        <button className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-gray-100 transition-colors">
-          <div className="text-black text-xl">★</div>
+        <button className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-gray-100 transition-colors">
+          <div className="text-black text-lg">★</div>
         </button>
       </div>
     </>

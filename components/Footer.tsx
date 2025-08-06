@@ -63,19 +63,15 @@ export default function Footer() {
             </div>
             {/* Contact me under social icons */}
             <div className="space-y-4">
-              <h3 className="font-bold text-lg">Contact me</h3>
               <div className="flex items-center space-x-2">
-                <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
                 <a 
-                  href="https://wa.me/330616993786" 
+                  href="https://wa.me/330616993786?text=Hey%20!%20%E2%9C%A8%20Je%20suis%20fan%20de%20tes%20créations%20Nena%20Mala%20!%20%E2%9D%A4%EF%B8%8F%20Upcycling%20luxe%20et%20durable%20%E2%9C%85%EF%B8%8F%20J%27adorerais%20en%20savoir%20plus%20!%20%E2%9C%A8%20Merci%20%E2%9D%A4%EF%B8%8F" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-sm text-gray-600 hover:underline"
                 >
-                  +33 06 16 99 37 86
+                  <h3 className="font-bold text-lg cursor-pointer">Contact me</h3>
                 </a>
+                <span className="text-black">📞</span>
               </div>
             </div>
           </div>
@@ -105,18 +101,18 @@ export default function Footer() {
             <div className="flex items-center space-x-4 mb-2 md:mb-0">
               <span>© 2025 NENA-MALA PUERTO ESCONDIDO</span>
               <span className="hidden md:inline">|</span>
-              <span className="hidden md:inline">Website design by <a href="https://studio-jo.com" target="_blank" rel="noopener noreferrer" className="hover:underline">JOSEPH-STUDIO.COM</a></span>
+              <span>Website design by <a href="https://studio-jo.com" target="_blank" rel="noopener noreferrer">JOSEPH-STUDIO.COM</a></span>
               <span className="hidden md:inline">|</span>
-              <a href="tel:+330608251223" className="hidden md:inline hover:underline">+33 06 08 25 12 23</a>
+              <a href="tel:+330608251223" className="hidden md:inline">+33 06 08 25 12 23</a>
             </div>
             <div className="flex flex-wrap items-center space-x-4">
-              <a href="#" className="hover:underline">Terms of Use</a>
+              <a href="#" className="">Terms of Use</a>
               <span className="hidden md:inline">|</span>
-              <a href="#" className="hover:underline">Privacy Policy</a>
+              <a href="#" className="">Privacy Policy</a>
               <span className="hidden md:inline">|</span>
-              <a href="#" className="hover:underline">Cookies Policy</a>
+              <a href="#" className="">Cookies Policy</a>
               <span className="hidden md:inline">|</span>
-              <a href="#" className="hover:underline">Corporate Social Responsibility</a>
+              <a href="#" className="">Corporate Social Responsibility</a>
             </div>
           </div>
           
