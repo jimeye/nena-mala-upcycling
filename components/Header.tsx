@@ -58,26 +58,26 @@ export default function Header() {
         setBorderColor('#ffffff');
         setIconColors(['#ffffff', '#ffffff', '#ffffff', '#ffffff']);
       } else if (isMobile) {
-        // Version mobile : produits empilés
-        if (scrollY < windowHeight * 1.2) {
+        // Version mobile : produits empilés verticalement (1 par ligne)
+        if (scrollY < windowHeight * 1.0) {
           // Produit 1 mobile : Chocolat
           setIsOverDarkContent(true);
           setLetterColors(['#453727', '#453727', '#453727', '#453727', '#453727', '#453727', '#453727', '#453727', '#453727']);
           setBorderColor('#453727');
           setIconColors(['#453727', '#453727', '#453727', '#453727']);
-        } else if (scrollY < windowHeight * 2.2) {
+        } else if (scrollY < windowHeight * 2.0) {
           // Produit 2 mobile : Rose pastel
           setIsOverDarkContent(true);
           setLetterColors(['#f8b4d9', '#f8b4d9', '#f8b4d9', '#f8b4d9', '#f8b4d9', '#f8b4d9', '#f8b4d9', '#f8b4d9', '#f8b4d9']);
           setBorderColor('#f8b4d9');
           setIconColors(['#f8b4d9', '#f8b4d9', '#f8b4d9', '#f8b4d9']);
-        } else if (scrollY < windowHeight * 3.2) {
+        } else if (scrollY < windowHeight * 3.0) {
           // Produit 3 mobile : Chocolat
           setIsOverDarkContent(true);
           setLetterColors(['#453727', '#453727', '#453727', '#453727', '#453727', '#453727', '#453727', '#453727', '#453727']);
           setBorderColor('#453727');
           setIconColors(['#453727', '#453727', '#453727', '#453727']);
-        } else if (scrollY < windowHeight * 4.2) {
+        } else if (scrollY < windowHeight * 4.0) {
           // Produit 4 mobile : Rouge foncé
           setIsOverDarkContent(true);
           setLetterColors(['#4e1a14', '#4e1a14', '#4e1a14', '#4e1a14', '#4e1a14', '#4e1a14', '#4e1a14', '#4e1a14', '#4e1a14']);
@@ -151,13 +151,13 @@ export default function Header() {
     let targetColor = '#453727'; // défaut
     if (isMobile) {
       // Version mobile
-      if (scrollY < windowHeight * 1.2) {
+      if (scrollY < windowHeight * 1.0) {
         targetColor = '#453727'; // Produit 1 mobile : Chocolat
-      } else if (scrollY < windowHeight * 2.2) {
+      } else if (scrollY < windowHeight * 2.0) {
         targetColor = '#f8b4d9'; // Produit 2 mobile : Rose pastel
-      } else if (scrollY < windowHeight * 3.2) {
+      } else if (scrollY < windowHeight * 3.0) {
         targetColor = '#453727'; // Produit 3 mobile : Chocolat
-      } else if (scrollY < windowHeight * 4.2) {
+      } else if (scrollY < windowHeight * 4.0) {
         targetColor = '#4e1a14'; // Produit 4 mobile : Rouge foncé
       } else {
         targetColor = '#453727'; // Footer mobile : Chocolat
