@@ -196,7 +196,7 @@ export default function Header() {
             newColors[letterIndex] = color;
             return newColors;
           });
-        }, letterIndex * 50 + stepIndex * 20); // 50ms entre lettres, 20ms entre étapes
+        }, letterIndex * 30 + stepIndex * 10); // 30ms entre lettres, 10ms entre étapes
       });
     });
 
@@ -205,7 +205,7 @@ export default function Header() {
     borderGradient.forEach((color, stepIndex) => {
       setTimeout(() => {
         setBorderColor(color);
-      }, 9 * 50 + stepIndex * 20); // Après les lettres
+      }, 9 * 30 + stepIndex * 10); // Après les lettres
     });
 
     // Animation progressive des icônes avec camaïeu
@@ -218,7 +218,7 @@ export default function Header() {
             newColors[iconIndex] = color;
             return newColors;
           });
-        }, (10 + iconIndex) * 50 + stepIndex * 20); // Après le cadre
+        }, (10 + iconIndex) * 30 + stepIndex * 10); // Après le cadre
       });
     });
   }, [isOverDarkContent, letterColors]);
