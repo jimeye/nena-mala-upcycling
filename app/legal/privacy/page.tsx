@@ -1,12 +1,3 @@
-export default function PrivacyPage() {
-  return (
-    <main className="px-[15px] py-8 md:py-12 max-w-3xl mx-auto text-black">
-      <h1 className="text-2xl font-bold mb-4">Privacy Policy</h1>
-      <p>Full legal content to be provided. Placeholder page.</p>
-    </main>
-  );
-}
-
 export const metadata = {
   title: 'Privacy Policy | Nena Mala',
   description: 'How Nena Mala collects, uses and protects your personal information.',
