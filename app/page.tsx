@@ -24,7 +24,31 @@ export default function HomePage() {
           <ProductGrid />
         </main>
       </div>
+
+      {/* Petit espace entre produits et vidéo */}
+      <div className="pt-1"></div>
       
+      {/* Vidéo process avant Instagram */}
+      <section className="px-[15px]">
+        <video
+          className="w-full h-auto"
+          autoPlay
+          muted
+          playsInline
+          loop
+          preload="metadata"
+          poster="/video/nena-mala-process-poster.jpg"
+        >
+          <source src="/video/nena-mala-process-720p.webm" type="video/webm" media="(max-width: 768px)" />
+          <source src="/video/nena-mala-process-720p.mp4" type="video/mp4" media="(max-width: 768px)" />
+          <source src="/video/nena-mala-process-1080p.webm" type="video/webm" />
+          <source src="/video/nena-mala-process-1080p.mp4" type="video/mp4" />
+        </video>
+      </section>
+
+      {/* Petit espace comme entre hero et cadres */}
+      <div className="pt-1"></div>
+
       {/* Footer après les produits */}
       <InstagramFeed />
       <Footer />
