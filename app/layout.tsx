@@ -14,14 +14,19 @@ export const metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://nena-mala.vercel.app'),
+  metadataBase: new URL('https://nena-mala.com'),
   alternates: {
     canonical: '/',
+    languages: {
+      'en-US': '/en',
+      'fr-FR': '/fr',
+      'es-MX': '/mx',
+    },
   },
   openGraph: {
     title: 'Nena Mala - Luxury Upcycling & Limited Pieces',
     description: 'Découvrez nos pièces uniques en upcycling. Pièces limitées disponibles à Puerto Escondido, Paris et Ibiza.',
-    url: 'https://nena-mala.vercel.app',
+    url: 'https://nena-mala.com',
     siteName: 'Nena Mala',
     images: [
       {

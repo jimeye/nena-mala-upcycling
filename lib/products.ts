@@ -6,7 +6,7 @@ export type Product = {
   colors: string[]; // hex
   sizes: string[];  // ex: 'UK 6'
   description: string;
-  category: 'dress' | 'top' | 'skirt' | 'denim';
+  category: 'dress' | 'top' | 'skirt' | 'denim' | 'pants' | 'accessories';
 };
 
 const products: Product[] = [
@@ -50,6 +50,27 @@ const products: Product[] = [
     description: 'Light boho top, perfect for summer and layering.',
     category: 'top'
   }
+  ,
+  {
+    slug: 'linen-wide-pants',
+    title: 'Linen Wide Pants',
+    price: '€130',
+    images: ['/produit-4-new.webp'],
+    colors: ['#333333', '#aaaaaa'],
+    sizes: ['UK 6', 'UK 8', 'UK 10', 'UK 12'],
+    description: 'Upcycled linen wide-leg pants with a soft drape and tailored waistband.',
+    category: 'pants'
+  },
+  {
+    slug: 'reworked-denim-bag',
+    title: 'Reworked Denim Bag',
+    price: '€85',
+    images: ['/produit-1.webp'],
+    colors: ['#1e1e1e'],
+    sizes: ['One size'],
+    description: 'Accessory crafted from reworked denim panels. Unique piece.',
+    category: 'accessories'
+  }
 ];
 
 export function getAllProducts(): Product[] {
@@ -65,5 +86,5 @@ export function getProductsByCategory(category: Product['category']): Product[] 
 }
 
 export function getAllCategories(): Product['category'][] {
-  return ['dress', 'top', 'skirt', 'denim'];
+  return ['dress', 'top', 'skirt', 'denim', 'pants', 'accessories'];
 }

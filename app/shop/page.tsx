@@ -5,7 +5,7 @@ import YouMayAlsoLike from '@/components/YouMayAlsoLike';
 
 export const metadata = {
   title: 'Shop | Nena Mala',
-  description: 'Explore our categories: Dress, Top, Skirt, Denim.'
+  description: 'Explore our categories: Dress, Top, Skirt, Denim, Pants, Accessories.'
 };
 
 const categories = [
@@ -13,6 +13,8 @@ const categories = [
   { key: 'top', label: 'Top', image: '/produit-2-new.webp' },
   { key: 'skirt', label: 'Skirt', image: '/produit-3-new.webp' },
   { key: 'denim', label: 'Denim', image: '/produit-4-new.webp' },
+  { key: 'pants', label: 'Pants', image: '/produit-2.webp' },
+  { key: 'accessories', label: 'Accessories', image: '/produit-3.webp' },
 ];
 
 export default function ShopPage() {
