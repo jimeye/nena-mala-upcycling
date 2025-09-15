@@ -21,8 +21,9 @@ export default function InstagramFeed() {
   return (
     <section className="px-[15px] py-8 md:py-12">
       <div className="mb-3 flex flex-col items-center gap-1">
-        <h2 className="text-xl md:text-2xl font-bold text-center">Instagram</h2>
-        <Link href="https://www.instagram.com/nenamala___17/" target="_blank" className="underline underline-offset-2">@nenamala___17</Link>
+        <Link href="https://www.instagram.com/nenamala___17/" target="_blank" className="underline-offset-4 hover:underline">
+          <h2 className="text-xl md:text-2xl font-bold text-center">Instagram</h2>
+        </Link>
       </div>
       <div className="w-full overflow-x-auto">
         <div className="flex gap-1 md:gap-1 pb-2 snap-x snap-mandatory">
