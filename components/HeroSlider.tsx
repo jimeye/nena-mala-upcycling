@@ -61,6 +61,10 @@ export default function HeroSlider({
 
   const slides = slidesProp && slidesProp.length > 0 ? slidesProp : defaultSlides;
 
+  // Eviter les divergences SSR/CSR: n'afficher le slider qu'après montage
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => { setMounted(true); }, []);
+
   const [currentSlide, setCurrentSlide] = useState(() => {
     const i = Math.max(0, Math.min(startIndex, slides.length - 1));
     return i;
@@ -85,6 +89,10 @@ export default function HeroSlider({
 
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+
+  if (!mounted) {
+    return <div className={`relative ${heightClass} overflow-hidden ${className}`} style={{ maxWidth: '100%', width: '100%' }} suppressHydrationWarning />;
+  }
 
   return (
     <div className={`relative ${heightClass} overflow-hidden ${className}`} style={{ maxWidth: '100%', width: '100%' }}>
