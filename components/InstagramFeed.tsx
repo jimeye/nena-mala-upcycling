@@ -20,8 +20,8 @@ const IMAGES = [
 export default function InstagramFeed() {
   return (
     <section className="px-[15px] py-8 md:py-12">
-      <div className="flex items-baseline justify-between mb-3">
-        <h2 className="text-xl md:text-2xl font-bold">Instagram</h2>
+      <div className="mb-3 flex flex-col items-center gap-1">
+        <h2 className="text-xl md:text-2xl font-bold text-center">Instagram</h2>
         <Link href="https://www.instagram.com/nenamala___17/" target="_blank" className="underline underline-offset-2">@nenamala___17</Link>
       </div>
       <div className="grid grid-cols-3 md:grid-cols-4 gap-1 md:gap-1">
