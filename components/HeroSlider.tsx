@@ -55,7 +55,7 @@ export default function HeroSlider({
       image: '/nena-mala-hero-static-acceuil.webp',
       title: 'Asymmetrical and straight, soft and always strongly feminine, big and small, dresses envelope the body with ethereal lightness, creating interweavings and daring meekness.',
       position: 'center',
-      verticalPosition: 'center'
+      verticalPosition: 'bottom'
     }
   ]), []);
 
