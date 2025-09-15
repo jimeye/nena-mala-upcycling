@@ -27,19 +27,19 @@ export default function CookieBanner() {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-[40] flex items-center justify-center p-4 pointer-events-none">
-      <div className="bg-white text-black w-full max-w-[720px] p-4 md:p-5 shadow-xl border pointer-events-auto">
-        <p className="text-base md:text-xl leading-snug text-center">
+    <div className="fixed inset-x-0 bottom-0 z-[40] flex items-center justify-center p-2 md:p-3 pointer-events-none">
+      <div className="bg-white text-black w-full max-w-[360px] md:max-w-[420px] p-2 md:p-3 shadow-xl border pointer-events-auto">
+        <p className="text-sm md:text-base leading-snug text-center">
           This website uses cookies to ensure you get the best experience.{' '}
           <Link href="/legal/cookies" className="underline">Learn more</Link>
         </p>
-        <div className="mt-6 flex items-center justify-center gap-6 md:gap-8">
-          <Link href="/legal/cookies" className="text-base md:text-lg font-medium underline-offset-2 hover:underline">
+        <div className="mt-3 md:mt-4 flex items-center justify-center gap-4 md:gap-6">
+          <Link href="/legal/cookies" className="text-sm md:text-base font-medium underline-offset-2 hover:underline">
             Preferences
           </Link>
           <button
             onClick={acceptAll}
-            className="px-6 md:px-8 py-2 md:py-3 border-2 border-black text-base md:text-lg font-semibold hover:bg-black hover:text-white transition-colors"
+            className="px-4 md:px-5 py-1.5 md:py-2 border-2 border-black text-sm md:text-base font-semibold hover:bg-black hover:text-white transition-colors"
             aria-label="Accept cookies"
           >
             Accept
