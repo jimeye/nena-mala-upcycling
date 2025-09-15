@@ -6,7 +6,7 @@ export type Product = {
   colors: string[]; // hex
   sizes: string[];  // ex: 'UK 6'
   description: string;
-  category: 'dress' | 'top' | 'skirt' | 'denim' | 'pants' | 'accessories';
+  category: 'dress' | 'top' | 'skirt' | 'denim' | 'pants' | 'two-piece-set';
 };
 
 const products: Product[] = [
@@ -62,14 +62,14 @@ const products: Product[] = [
     category: 'pants'
   },
   {
-    slug: 'reworked-denim-bag',
-    title: 'Reworked Denim Bag',
-    price: '€85',
-    images: ['/produit-1.webp'],
+    slug: 'two-piece-set-look',
+    title: 'Two-piece Set',
+    price: '€185',
+    images: ['/produit-3.webp'],
     colors: ['#1e1e1e'],
-    sizes: ['One size'],
-    description: 'Accessory crafted from reworked denim panels. Unique piece.',
-    category: 'accessories'
+    sizes: ['UK 6', 'UK 8', 'UK 10', 'UK 12'],
+    description: 'Coordinated two-piece set crafted from upcycled materials.',
+    category: 'two-piece-set'
   }
 ];
 
@@ -86,5 +86,5 @@ export function getProductsByCategory(category: Product['category']): Product[] 
 }
 
 export function getAllCategories(): Product['category'][] {
-  return ['dress', 'top', 'skirt', 'denim', 'pants', 'accessories'];
+  return ['dress', 'top', 'skirt', 'denim', 'pants', 'two-piece-set'];
 }

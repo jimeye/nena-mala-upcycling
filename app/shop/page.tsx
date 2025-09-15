@@ -5,7 +5,7 @@ import YouMayAlsoLike from '@/components/YouMayAlsoLike';
 
 export const metadata = {
   title: 'Shop | Nena Mala',
-  description: 'Explore our categories: Dress, Top, Skirt, Denim, Pants, Accessories.'
+  description: 'Explore our categories: Dress, Top, Skirt, Denim, Pants, Two-piece set.'
 };
 
 const categories = [
@@ -14,7 +14,7 @@ const categories = [
   { key: 'skirt', label: 'Skirt', image: '/produit-3-new.webp' },
   { key: 'denim', label: 'Denim', image: '/produit-4-new.webp' },
   { key: 'pants', label: 'Pants', image: '/produit-2.webp' },
-  { key: 'accessories', label: 'Accessories', image: '/produit-3.webp' },
+  { key: 'two-piece-set', label: 'Two-piece set', image: '/produit-3.webp' },
 ];
 
 export default function ShopPage() {
@@ -25,7 +25,7 @@ export default function ShopPage() {
 
       {/* Categories grid */}
       <section className="px-[15px] py-8 md:py-12">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-1">
+        <div className="grid grid-cols-3 gap-2 md:gap-1">
           {categories.map((c) => (
             <Link key={c.key} href={`/shop/${c.key}`} className="group block overflow-hidden">
               <img src={c.image} alt={c.label} className="w-full aspect-[3/4] object-cover" />
