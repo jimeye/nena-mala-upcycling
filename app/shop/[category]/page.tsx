@@ -22,7 +22,7 @@ export default function CategoryPage({ params }: Params) {
   return (
     <main className="text-black">
       <Header fixed={true} enableDynamicColors={false} baseColor="#000000" />
-      <div className="h-16 md:h-20"></div>
+      <div className="h-10 md:h-12"></div>
 
       {/* Grid */}
       <section className="px-[15px] py-8 md:py-12">

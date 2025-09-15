@@ -21,7 +21,7 @@ export default function ShopPage() {
   return (
     <main className="text-black">
       <Header fixed={true} enableDynamicColors={true} baseColor="#da3832" />
-      <div className="h-16 md:h-20"></div>
+      <div className="h-10 md:h-12"></div>
 
       {/* Categories grid */}
       <section className="px-[15px] py-8 md:py-12">
