@@ -9,7 +9,7 @@ export const metadata = {
 };
 
 const categories = [
-  { key: 'dress', label: 'Dress', image: '/produit-1.webp' },
+  { key: 'dress', label: 'Dress', image: '/dress-nena-mala-puerto-escondido-paris-upcycling-fashion.webp' },
   { key: 'top', label: 'Top', image: '/produit-2-new.webp' },
   { key: 'denim', label: 'Denim', image: '/produit-4-new.webp' },
   { key: 'pants', label: 'Pants', image: '/produit-2.webp' },
