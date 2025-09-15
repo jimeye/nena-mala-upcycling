@@ -24,17 +24,19 @@ export default function InstagramFeed() {
         <h2 className="text-xl md:text-2xl font-bold text-center">Instagram</h2>
         <Link href="https://www.instagram.com/nenamala___17/" target="_blank" className="underline underline-offset-2">@nenamala___17</Link>
       </div>
-      <div className="grid grid-cols-3 md:grid-cols-4 gap-1 md:gap-1">
-        {IMAGES.slice(0, 8).map((src, i) => (
-          <Link
-            key={i}
-            href="https://www.instagram.com/nenamala___17/"
-            target="_blank"
-            className="block aspect-square overflow-hidden bg-gray-100"
-          >
-            <img src={src} alt="Instagram preview" className="w-full h-full object-cover" />
-          </Link>
-        ))}
+      <div className="w-full overflow-x-auto">
+        <div className="flex gap-1 md:gap-1 pb-2 snap-x snap-mandatory">
+          {IMAGES.slice(0, 12).map((src, i) => (
+            <Link
+              key={i}
+              href="https://www.instagram.com/nenamala___17/"
+              target="_blank"
+              className="snap-start block min-w-[33%] md:min-w-[25%] aspect-square overflow-hidden bg-gray-100"
+            >
+              <img src={src} alt="Instagram preview" className="w-full h-full object-cover" />
+            </Link>
+          ))}
+        </div>
       </div>
     </section>
   );
