@@ -30,7 +30,7 @@ export default function ShopPage() {
             <Link key={c.key} href={`/shop/${c.key}`} className="group block overflow-hidden">
               <img src={c.image} alt={c.label} className="w-full aspect-[3/4] object-cover" />
               <div className="mt-2 text-center">
-                <span className="text-[#da3832] text-2xl md:text-3xl font-bold">{c.label}</span>
+                <span className="text-[#da3832] text-[22px] md:text-[27px] font-bold">{c.label}</span>
               </div>
             </Link>
           ))}
