@@ -1,6 +1,7 @@
 import './globals.css';
 import { ReactNode } from 'react';
 import CookieBanner from '../components/CookieBanner';
+import LiveChat from '../components/LiveChat';
 
 export const metadata = {
   title: 'Nena Mala - Luxury Upcycling & Limited Pieces',
@@ -65,6 +66,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body className="bg-white text-black">
         {children}
         <CookieBanner />
+        <LiveChat />
       </body>
     </html>
   );
