@@ -2,6 +2,7 @@ import Header from '@/components/Header';
 import ProductGrid from '@/components/ProductGrid';
 import Footer from '@/components/Footer';
 import HeroSlider from '@/components/HeroSlider';
+import InstagramFeed from '@/components/InstagramFeed';
 
 export default function HomePage() {
   return (
@@ -25,6 +26,7 @@ export default function HomePage() {
       </div>
       
       {/* Footer après les produits */}
+      <InstagramFeed />
       <Footer />
       
       {/* Livechat avec étoile en bas à gauche */}
