@@ -11,9 +11,9 @@ export const metadata = {
 const categories = [
   { key: 'dress', label: 'Dress', image: '/produit-1.webp' },
   { key: 'top', label: 'Top', image: '/produit-2-new.webp' },
-  { key: 'skirt', label: 'Skirt', image: '/produit-3-new.webp' },
   { key: 'denim', label: 'Denim', image: '/produit-4-new.webp' },
   { key: 'pants', label: 'Pants', image: '/produit-2.webp' },
+  { key: 'skirt', label: 'Skirt', image: '/produit-3-new.webp' },
   { key: 'two-piece', label: 'Two-piece', image: '/produit-3.webp' },
 ];
 
