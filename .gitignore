@@ -12,3 +12,7 @@ yarn-error.log*
 # Editor
 .vscode
 .idea
+
+# Ignore heavy source video
+public/*.mov
+
