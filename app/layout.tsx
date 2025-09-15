@@ -31,10 +31,10 @@ export const metadata = {
     siteName: 'Nena Mala',
     images: [
       {
-        url: '/og-image.svg',
+        url: '/dress-nena-mala-puerto-escondido-paris-upcycling-fashion.JPG',
         width: 1200,
         height: 630,
-        alt: 'Nena Mala - Upcycling & Pièces Limitées',
+        alt: 'Nena Mala - Upcycling & Limited Pieces',
       },
     ],
     locale: 'fr_FR',
@@ -44,7 +44,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Nena Mala - Luxury Upcycling & Limited Pieces',
     description: 'Découvrez nos pièces uniques en upcycling. Pièces limitées disponibles à Puerto Escondido, Paris et Ibiza.',
-    images: ['/og-image.svg'],
+    images: ['/dress-nena-mala-puerto-escondido-paris-upcycling-fashion.JPG'],
   },
   robots: {
     index: true,
