@@ -369,7 +369,7 @@ export default function Header({
             <Link href={`${localeFromPath || ''}/shop/skirt`} onClick={() => setMenuOpen(false)} className="underline-offset-2 hover:underline">Skirt</Link>
             <Link href={`${localeFromPath || ''}/shop/denim`} onClick={() => setMenuOpen(false)} className="underline-offset-2 hover:underline">Denim</Link>
             <Link href={`${localeFromPath || ''}/shop/pants`} onClick={() => setMenuOpen(false)} className="underline-offset-2 hover:underline">Pants</Link>
-            <Link href={`${localeFromPath || ''}/shop/two-piece`} onClick={() => setMenuOpen(false)} className="underline-offset-2 hover:underline">Two-piece</Link>
+            <Link href={`${localeFromPath || ''}/shop/two-piece`} onClick={() => setMenuOpen(false)} className="underline-offset-2 hover:underline">2-piece</Link>
             <Link href={`${localeFromPath || ''}/about`} onClick={() => setMenuOpen(false)} className="underline-offset-2 hover:underline">About</Link>
             <Link href={`${localeFromPath || ''}/contact`} onClick={() => setMenuOpen(false)} className="underline-offset-2 hover:underline">Contact</Link>
             <div className="h-px w-full" style={{ backgroundColor: isShopTheme ? 'rgba(255,255,255,0.25)' : 'rgba(0,0,0,0.15)' }} />
