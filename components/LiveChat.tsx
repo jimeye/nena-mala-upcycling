@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const WHATSAPP_NUMBER = '33616993786'; // international format without +
 
@@ -12,6 +12,8 @@ const messages = [
 
 export default function LiveChat() {
   const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => { setMounted(true); }, []);
 
   const send = (text: string) => {
     try {
@@ -20,6 +22,8 @@ export default function LiveChat() {
       setOpen(false);
     } catch {}
   };
+
+  if (!mounted) return null;
 
   return (
     <div className="fixed bottom-5 left-[15px] z-[75]" style={{ fontFamily: 'CourierRegular, "Courier New", Courier, monospace' }}>

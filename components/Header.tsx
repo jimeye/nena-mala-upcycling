@@ -27,6 +27,8 @@ export default function Header({
   onMenuClick,
 }: HeaderProps) {
   const brandChars = useMemo(() => Array.from(brandText), [brandText]);
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => { setMounted(true); }, []);
   const pathname = usePathname();
   const localeFromPath = useMemo(() => {
     try {
@@ -280,6 +282,10 @@ export default function Header({
       });
     });
   }, [enableDynamicColors, brandChars, letterColors, iconColors]);
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <header className={`${fixed ? 'fixed' : 'relative'} top-0 left-0 right-0 z-[60] transition-all duration-300 font-sans`}>
