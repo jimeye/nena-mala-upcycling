@@ -22,6 +22,8 @@
 
 html, body {
   font-family: 'CourierRegular', 'Courier New', Courier, monospace;
+  background-color: #000; /* éviter le flash blanc en haut */
+  overscroll-behavior: none; /* éviter l'effet de rebond visuel */
 }
 
 /* Empêcher le défilement horizontal global (site qui "flotte") */
