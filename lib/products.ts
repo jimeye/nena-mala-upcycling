@@ -6,7 +6,7 @@ export type Product = {
   colors: string[]; // hex
   sizes: string[];  // ex: 'UK 6'
   description: string;
-  category: 'dress' | 'top' | 'skirt' | 'denim' | 'pants' | 'two-piece-set';
+  category: 'dress' | 'top' | 'skirt' | 'denim' | 'pants' | 'two-piece';
 };
 
 const products: Product[] = [
@@ -69,7 +69,7 @@ const products: Product[] = [
     colors: ['#1e1e1e'],
     sizes: ['UK 6', 'UK 8', 'UK 10', 'UK 12'],
     description: 'Coordinated two-piece set crafted from upcycled materials.',
-    category: 'two-piece-set'
+    category: 'two-piece'
   }
 ];
 
@@ -86,5 +86,5 @@ export function getProductsByCategory(category: Product['category']): Product[] 
 }
 
 export function getAllCategories(): Product['category'][] {
-  return ['dress', 'top', 'skirt', 'denim', 'pants', 'two-piece-set'];
+  return ['dress', 'top', 'skirt', 'denim', 'pants', 'two-piece'];
 }
