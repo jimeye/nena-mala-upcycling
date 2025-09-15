@@ -28,7 +28,14 @@ export default function ShopPage() {
         <div className="grid grid-cols-3 gap-2 md:gap-1">
           {categories.map((c) => (
             <Link key={c.key} href={`/shop/${c.key}`} className="group block overflow-hidden">
-              <img src={c.image} alt={c.label} className="w-full aspect-[3/4] object-cover" />
+              <div className="relative w-full aspect-[3/4] bg-gray-200">
+                <img src={c.image} alt={c.label} className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <span className="bg-transparent text-[#da3832] font-normal border border-[#da3832] text-xs md:text-base px-4 py-1.5 md:px-6 md:py-2">shop now</span>
+                </div>
+              </div>
               <div className="mt-2 text-center">
                 <span className="text-[#da3832] text-[22px] md:text-[27px] font-bold">{c.label}</span>
               </div>
