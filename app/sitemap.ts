@@ -39,11 +39,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entries.push({
       url: canonical,
       lastModified: now,
-      changeFrequency: 'daily',
-      priority: path === '' ? 1 : 0.7,
-      alternates: {
-        languages: alternates,
-      },
     });
   }
 
