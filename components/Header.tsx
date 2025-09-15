@@ -354,6 +354,8 @@ export default function Header({
             <Link href="/shop/top" onClick={() => setMenuOpen(false)} className="underline-offset-2 hover:underline">Top</Link>
             <Link href="/shop/skirt" onClick={() => setMenuOpen(false)} className="underline-offset-2 hover:underline">Skirt</Link>
             <Link href="/shop/denim" onClick={() => setMenuOpen(false)} className="underline-offset-2 hover:underline">Denim</Link>
+            <Link href="/shop/pants" onClick={() => setMenuOpen(false)} className="underline-offset-2 hover:underline">Pants</Link>
+            <Link href="/shop/two-piece" onClick={() => setMenuOpen(false)} className="underline-offset-2 hover:underline">Two-piece</Link>
             <Link href="/about" onClick={() => setMenuOpen(false)} className="underline-offset-2 hover:underline">About</Link>
             <Link href="/contact" onClick={() => setMenuOpen(false)} className="underline-offset-2 hover:underline">Contact</Link>
             <div className="h-px w-full" style={{ backgroundColor: isShopTheme ? 'rgba(255,255,255,0.25)' : 'rgba(0,0,0,0.15)' }} />
