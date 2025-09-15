@@ -27,7 +27,7 @@ export default function InstagramFeed() {
       </div>
       <div className="w-full overflow-x-auto">
         <div className="flex gap-1 md:gap-1 pb-2 snap-x snap-mandatory">
-          {IMAGES.slice(0, 12).map((src, i) => (
+          {IMAGES.slice(0, 9).map((src, i) => (
             <Link
               key={i}
               href="https://www.instagram.com/nenamala___17/"
