@@ -18,7 +18,7 @@ export default function HomePage() {
       />
       
       {/* Products après le slider */}
-      <div className="pt-1">
+      <div className="pt-1 overflow-x-hidden">
         <main>
           <ProductGrid />
         </main>

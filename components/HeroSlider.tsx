@@ -81,7 +81,7 @@ export default function HeroSlider({
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
-    <div className={`relative ${heightClass} overflow-hidden ${className}`}>
+    <div className={`relative ${heightClass} overflow-hidden ${className}`} style={{ maxWidth: '100%', width: '100%' }}>
       {/* Slides */}
       <div className="relative h-full">
         {slides.map((slide, index) => (

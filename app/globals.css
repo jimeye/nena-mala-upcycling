@@ -24,6 +24,18 @@ html, body {
   font-family: 'CourierRegular', 'Courier New', Courier, monospace;
 }
 
+/* Empêcher le défilement horizontal global (site qui "flotte") */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Sécuriser les largeurs d’images/vidéos pour éviter les débords */
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* Font customization, colors, etc. can go here */
 
 /* Supprimer les soulignements de tous les liens */

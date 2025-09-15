@@ -21,10 +21,10 @@ export default function ProductCard({ image, name, price, href, onClick }: Produ
 
         {/* Product name overlay */}
         <div className="absolute bottom-4 left-4">
-          <h3 className="text-white font-normal text-lg">{name}</h3>
+          <h3 className="text-white font-normal text-sm md:text-lg">{name}</h3>
           <Price
             cents={Math.round(parseFloat(price.replace(/[^0-9.,]/g, '').replace(',', '.')) * 100) || 0}
-            className="text-white text-sm font-normal"
+            className="text-white text-xs md:text-sm font-normal"
           />
         </div>
 
@@ -33,7 +33,7 @@ export default function ProductCard({ image, name, price, href, onClick }: Produ
 
         {/* Hover CTA text only (non-interactive) */}
         <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-          <span className="bg-transparent text-white font-normal border border-white px-6 py-2">shop now</span>
+          <span className="bg-transparent text-white font-normal border border-white text-xs md:text-base px-4 py-1.5 md:px-6 md:py-2">shop now</span>
         </div>
       </div>
     </article>

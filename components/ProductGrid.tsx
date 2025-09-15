@@ -9,7 +9,7 @@ const products = [
 
 export default function ProductGrid() {
   return (
-    <section className="flex md:grid md:grid-cols-4 gap-2 md:gap-1 overflow-x-auto md:overflow-visible snap-x snap-mandatory -mx-4 px-4">
+    <section className="flex md:grid md:grid-cols-4 gap-2 md:gap-1 overflow-x-auto md:overflow-visible snap-x snap-mandatory -mx-4 px-4 max-w-full">
       {products.map((product) => (
         <div key={product.id} className="shrink-0 snap-start w-[40vw] md:w-auto">
           <ProductCard
