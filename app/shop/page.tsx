@@ -34,7 +34,7 @@ export default function ShopPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <span className="bg-transparent text-[#da3832] font-normal border border-[#da3832] text-xs md:text-base px-4 py-1.5 md:px-6 md:py-2" style={{ transform: 'scale(0.85)' }}>shop now</span>
+                  <span className="bg-transparent text-[#da3832] font-bold border border-[#da3832] text-xs md:text-base px-4 py-1.5 md:px-6 md:py-2" style={{ transform: 'scale(0.85)' }}>shop now</span>
                 </div>
               </div>
               <div className="mt-2 text-center">

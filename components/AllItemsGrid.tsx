@@ -40,7 +40,7 @@ export default function AllItemsGrid() {
                 <Image src={p.images[0]} alt={p.title} fill sizes="(max-width: 768px) 33vw, 16vw" className="object-cover" />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <span className="bg-transparent text-black font-normal border border-black text-[10px] md:text-xs px-3 py-1">shop now</span>
+                  <span className="bg-transparent text-black font-bold border border-black text-[10px] md:text-xs px-3 py-1">shop now</span>
                 </div>
               </div>
             </Link>
