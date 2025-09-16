@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 // Fallback local images (used if API is empty)
@@ -98,7 +99,7 @@ export default function InstagramFeed() {
                   target="_blank"
                   className="relative block aspect-square overflow-hidden bg-gray-100"
                 >
-                  <img src={p.mediaUrl} alt="Instagram preview" className="w-full h-full object-cover" />
+                  <Image src={p.mediaUrl} alt="Instagram preview" fill sizes="(max-width: 768px) 33vw, 25vw" className="object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-2 flex items-center gap-2 text-white">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" className="opacity-90">

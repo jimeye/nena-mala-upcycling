@@ -140,7 +140,8 @@ export default function Header({
   useEffect(() => {
     if (!enableDynamicColors) return; // si désactivé, on reste sur baseColor
 
-    const handleScrollForColor = () => {
+    let ticking = false;
+    const run = () => {
       const scrollY = window.scrollY;
       const windowHeight = window.innerHeight;
       const isMobile = window.innerWidth < 768;
@@ -218,9 +219,19 @@ export default function Header({
       }
     };
 
-    window.addEventListener('scroll', handleScrollForColor);
-    handleScrollForColor();
-    return () => window.removeEventListener('scroll', handleScrollForColor);
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          run();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    run();
+    return () => window.removeEventListener('scroll', onScroll);
   }, [enableDynamicColors]);
 
   useEffect(() => {

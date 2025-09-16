@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import Price from '../../../components/Price';
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
@@ -30,7 +31,7 @@ export default function CategoryPage({ params }: Params) {
           {items.map((p) => (
             <Link key={p.slug} href={`/product/${p.slug}`} className="block group overflow-hidden">
               <div className="relative w-full aspect-[3/4] bg-gray-200">
-                <img src={p.images[0]} alt={p.title} className="w-full h-full object-cover" />
+                <Image src={p.images[0]} alt={p.title} fill sizes="(max-width: 768px) 50vw, 33vw" className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 {/* Badge noir centré et légèrement agrandi */}
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">

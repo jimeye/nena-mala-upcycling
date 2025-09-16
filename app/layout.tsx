@@ -62,7 +62,37 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="fr">
-      <head />
+      <head>
+        <script
+          type="application/ld+json"
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            name: 'Nena Mala',
+            url: 'https://nena-mala.com',
+            logo: 'https://nena-mala.com/logo-black.svg',
+            sameAs: [
+              'https://www.instagram.com/nenamala___17/'
+            ]
+          }) }}
+        />
+        <script
+          type="application/ld+json"
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebSite',
+            name: 'Nena Mala',
+            url: 'https://nena-mala.com',
+            potentialAction: {
+              '@type': 'SearchAction',
+              target: 'https://nena-mala.com/search?q={search_term_string}',
+              'query-input': 'required name=search_term_string'
+            }
+          }) }}
+        />
+      </head>
       <body className="bg-white text-black">
         {children}
         <CookieBanner />

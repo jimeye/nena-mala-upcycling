@@ -3,6 +3,7 @@ import ProductGrid from '@/components/ProductGrid';
 import Footer from '@/components/Footer';
 import HeroSlider from '@/components/HeroSlider';
 import InstagramFeed from '@/components/InstagramFeed';
+import VideoPlayer from '@/components/VideoPlayer';
 
 export default function HomePage() {
   return (
@@ -30,20 +31,15 @@ export default function HomePage() {
       
       {/* Vidéo process avant Instagram */}
       <section className="px-[15px]">
-        <video
-          className="w-full h-auto"
-          autoPlay
-          muted
-          playsInline
-          loop
-          preload="metadata"
+        <VideoPlayer
           poster="/video/nena-mala-process-poster.jpg"
-        >
-          <source src="/video/nena-mala-process-720p.webm" type="video/webm" media="(max-width: 768px)" />
-          <source src="/video/nena-mala-process-720p.mp4" type="video/mp4" media="(max-width: 768px)" />
-          <source src="/video/nena-mala-process-1080p.webm" type="video/webm" />
-          <source src="/video/nena-mala-process-1080p.mp4" type="video/mp4" />
-        </video>
+          sources={[
+            { src: '/video/nena-mala-process-720p.webm', type: 'video/webm', media: '(max-width: 768px)' },
+            { src: '/video/nena-mala-process-720p.mp4', type: 'video/mp4', media: '(max-width: 768px)' },
+            { src: '/video/nena-mala-process-1080p.webm', type: 'video/webm' },
+            { src: '/video/nena-mala-process-1080p.mp4', type: 'video/mp4' },
+          ]}
+        />
       </section>
 
       {/* Petit espace comme entre hero et cadres */}

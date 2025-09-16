@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import React from 'react';
 import Price from './Price';
+import Image from 'next/image';
 
 type ProductCardProps = {
   image: string;
@@ -16,7 +17,7 @@ export default function ProductCard({ image, name, price, href, onClick }: Produ
     <article className="group relative overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-in-out cursor-pointer">
       {/* Image */}
       <div className="aspect-[3/5] bg-gray-200 relative">
-        <img src={image} alt={name} className="w-full h-full object-cover" />
+        <Image src={image} alt={name} fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
 
         {/* Product name overlay */}

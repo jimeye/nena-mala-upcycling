@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import YouMayAlsoLike from '@/components/YouMayAlsoLike';
@@ -29,7 +30,7 @@ export default function ShopPage() {
           {categories.map((c) => (
             <Link key={c.key} href={`/shop/${c.key}`} className="group block overflow-hidden">
               <div className="relative w-full aspect-[3/4] bg-gray-200">
-                <img src={c.image} alt={c.label} className="w-full h-full object-cover" />
+                <Image src={c.image} alt={c.label} fill sizes="(max-width: 768px) 33vw, 25vw" className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
