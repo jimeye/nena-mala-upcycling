@@ -51,6 +51,45 @@ img, video {
   animation: overlay-pulse 5s ease-in-out infinite;
 }
 
+/* Lien avec soulignement animé façon étoile filante */
+.fancy-underline { position: relative; }
+.fancy-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 1px;
+  background: currentColor;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform .7s ease;
+}
+.fancy-underline:hover::after { transform: scaleX(1); }
+.fancy-underline:hover::before {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background: currentColor;
+  filter: drop-shadow(0 0 4px currentColor);
+  animation: shooting-dot .7s ease forwards;
+}
+@keyframes shooting-dot { from { transform: translateX(0); } to { transform: translateX(calc(100% - 6px)); } }
+
+/* Ouverture panneau hamburger façon rideau */
+@keyframes curtain-in {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(0); }
+}
+.animate-curtain-in {
+  animation: curtain-in .7s ease-out both;
+  will-change: transform;
+}
+
 /* Font customization, colors, etc. can go here */
 
 /* Supprimer les soulignements de tous les liens */
