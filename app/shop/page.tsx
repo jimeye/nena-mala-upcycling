@@ -27,10 +27,10 @@ export default function ShopPage() {
       {/* Categories grid */}
       <section className="px-[15px] py-8 md:py-12">
         <div className="grid grid-cols-3 gap-2 md:gap-1">
-          {categories.map((c) => (
+          {categories.map((c, i) => (
             <Link key={c.key} href={`/shop/${c.key}`} className="group block overflow-hidden">
               <div className="relative w-full aspect-[3/4] bg-gray-200">
-                <Image src={c.image} alt={c.label} fill sizes="(max-width: 768px) 33vw, 25vw" className="object-cover" />
+                <Image src={c.image} alt={c.label} fill sizes="(max-width: 768px) 33vw, 25vw" className="object-cover" unoptimized priority={i===0} />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">

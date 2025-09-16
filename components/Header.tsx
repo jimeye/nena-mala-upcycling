@@ -362,7 +362,7 @@ export default function Header({
         <div className="fixed inset-0 z-40">
           <button aria-label="Close menu overlay" className="absolute inset-0" style={{ backgroundColor: isShopTheme ? 'rgba(0,0,0,0.65)' : hexToRgba(baseColor, 0.35) }} onClick={() => setMenuOpen(false)}></button>
           <div
-            className="absolute right-0 top-0 h-full w-[41%] md:w-3/4 max-w-xs p-6 flex flex-col gap-4"
+            className="absolute right-0 top-0 h-full w-[calc(41%+10px)] md:w-3/4 max-w-xs p-6 flex flex-col gap-4"
             style={{
               fontFamily: 'CourierRegular, "Courier New", Courier, monospace',
               backgroundColor: isShopTheme ? baseColor : '#ffffff',
@@ -375,13 +375,13 @@ export default function Header({
             </div>
             <Link href={`${localeFromPath || ''}/`} onClick={() => setMenuOpen(false)} className="underline-offset-2 hover:underline">Home</Link>
             <Link href={`${localeFromPath || ''}/shop`} onClick={() => setMenuOpen(false)} className="underline-offset-2 hover:underline">Shop</Link>
-            <Link href={`${localeFromPath || ''}/all-items`} onClick={() => setMenuOpen(false)} className="underline-offset-2 hover:underline">All Items</Link>
             <Link href={`${localeFromPath || ''}/shop/dress`} onClick={() => setMenuOpen(false)} className="underline-offset-2 hover:underline">Dress</Link>
             <Link href={`${localeFromPath || ''}/shop/top`} onClick={() => setMenuOpen(false)} className="underline-offset-2 hover:underline">Top</Link>
             <Link href={`${localeFromPath || ''}/shop/skirt`} onClick={() => setMenuOpen(false)} className="underline-offset-2 hover:underline">Skirt</Link>
             <Link href={`${localeFromPath || ''}/shop/denim`} onClick={() => setMenuOpen(false)} className="underline-offset-2 hover:underline">Denim</Link>
             <Link href={`${localeFromPath || ''}/shop/pants`} onClick={() => setMenuOpen(false)} className="underline-offset-2 hover:underline">Pants</Link>
             <Link href={`${localeFromPath || ''}/shop/two-piece`} onClick={() => setMenuOpen(false)} className="underline-offset-2 hover:underline">2-piece</Link>
+            <Link href={`${localeFromPath || ''}/all-items`} onClick={() => setMenuOpen(false)} className="underline-offset-2 hover:underline">All Items</Link>
             <Link href={`${localeFromPath || ''}/about`} onClick={() => setMenuOpen(false)} className="underline-offset-2 hover:underline">About</Link>
             <Link href={`${localeFromPath || ''}/contact`} onClick={() => setMenuOpen(false)} className="underline-offset-2 hover:underline">Contact</Link>
             <div className="h-px w-full" style={{ backgroundColor: isShopTheme ? 'rgba(255,255,255,0.25)' : 'rgba(0,0,0,0.15)' }} />
