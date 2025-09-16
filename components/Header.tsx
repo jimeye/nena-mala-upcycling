@@ -362,7 +362,7 @@ export default function Header({
         <div className="fixed inset-0 z-40">
           <button aria-label="Close menu overlay" className="absolute inset-0" style={{ backgroundColor: isShopTheme ? 'rgba(0,0,0,0.65)' : hexToRgba(baseColor, 0.35) }} onClick={() => setMenuOpen(false)}></button>
           <div
-            className="absolute right-0 top-0 h-full w-[calc(41%+10px)] md:w-3/4 max-w-xs p-6 flex flex-col gap-4"
+            className="absolute right-0 top-0 h-full w-[calc(41%+30px)] md:w-3/4 max-w-xs p-6 flex flex-col gap-4"
             style={{
               fontFamily: 'CourierRegular, "Courier New", Courier, monospace',
               backgroundColor: isShopTheme ? baseColor : '#ffffff',

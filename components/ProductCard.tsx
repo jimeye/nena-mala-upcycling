@@ -33,7 +33,7 @@ export default function ProductCard({ image, name, price, href, onClick }: Produ
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
 
         {/* Hover CTA text only (non-interactive) */}
-        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center animate-overlay-pulse">
           <span className="bg-transparent text-white font-bold border border-white text-xs md:text-base px-4 py-1.5 md:px-6 md:py-2">shop now</span>
         </div>
       </div>

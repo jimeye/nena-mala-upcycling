@@ -38,6 +38,19 @@ img, video {
   display: block;
 }
 
+/* Overlay pulse (appear briefly every 3s) */
+@keyframes overlay-pulse {
+  0% { opacity: 0; }
+  10% { opacity: 1; }  /* fade-in sur ~0.5s */
+  60% { opacity: 1; }  /* visible ~2.5s */
+  61% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+.animate-overlay-pulse {
+  animation: overlay-pulse 5s ease-in-out infinite;
+}
+
 /* Font customization, colors, etc. can go here */
 
 /* Supprimer les soulignements de tous les liens */

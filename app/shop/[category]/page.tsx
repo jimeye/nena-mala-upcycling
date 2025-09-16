@@ -34,7 +34,7 @@ export default function CategoryPage({ params }: Params) {
                 <Image src={p.images[0]} alt={p.title} fill sizes="(max-width: 768px) 50vw, 33vw" className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 {/* Badge noir centré et légèrement agrandi */}
-                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none animate-overlay-pulse">
                   <span
                     className="bg-black/80 text-white tracking-wide text-xs md:text-sm px-[0.54rem] py-[0.188rem]"
                     style={{ transform: 'scale(1.38)', fontFamily: 'FuturaXBoldItalic, sans-serif', fontWeight: 800, fontStyle: 'italic' }}
