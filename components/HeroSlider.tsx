@@ -34,25 +34,25 @@ export default function HeroSlider({
 }: HeroSliderProps) {
   const defaultSlides: HeroSlide[] = useMemo(() => ([
     {
-      image: '/nena-mala-hero-static-acceuil.webp',
+      image: '/nena-mala-hero-static-acceuil-1.webp',
       title: 'upcycling. crafted. conscious.',
       position: 'left',
       verticalPosition: 'center'
     },
     {
-      image: '/nena-mala-hero-static-acceuil.webp',
+      image: '/nena-mala-hero-static-acceuil-2.webp',
       title: 'sustainable fashion',
       position: 'center',
       verticalPosition: 'bottom'
     },
     {
-      image: '/nena-mala-hero-static-acceuil.webp',
+      image: '/nena-mala-hero-static-acceuil-3.webp',
       title: 'limited edition',
       position: 'right',
       verticalPosition: 'top'
     },
     {
-      image: '/nena-mala-hero-static-acceuil.webp',
+      image: '/nena-mala-hero-static-acceuil-4.webp',
       title: 'Asymmetrical and straight, soft and always strongly feminine, big and small, dresses envelope the body with ethereal lightness, creating interweavings and daring meekness.',
       position: 'center',
       verticalPosition: 'bottom'
