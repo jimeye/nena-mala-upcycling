@@ -32,15 +32,15 @@ export default function AllItemsGrid() {
         </select>
       </div>
 
-      <div className="bg-black p-2">
-        <div className="grid grid-cols-3 md:grid-cols-6 gap-[2px]">
+      <div>
+        <div className="grid grid-cols-3 md:grid-cols-6 gap-1">
           {items.map((p) => (
             <Link key={p.slug} href={`/product/${p.slug}`} className="group block relative overflow-hidden">
               <div className="relative w-full aspect-[3/4]">
-                <Image src={p.images[0]} alt={p.title} fill sizes="(max-width: 768px) 33vw, 16vw" className="object-cover filter grayscale" />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+                <Image src={p.images[0]} alt={p.title} fill sizes="(max-width: 768px) 33vw, 16vw" className="object-cover" />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <span className="bg-transparent text-white font-normal border border-white text-[10px] md:text-xs px-3 py-1">shop now</span>
+                  <span className="bg-transparent text-black font-normal border border-black text-[10px] md:text-xs px-3 py-1">shop now</span>
                 </div>
               </div>
             </Link>
