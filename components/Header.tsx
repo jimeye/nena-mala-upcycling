@@ -386,7 +386,7 @@ export default function Header({
               const closeMenu = () => {
                 if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
                 setIsMenuClosing(true);
-                closeTimerRef.current = setTimeout(() => { setMenuOpen(false); setIsMenuClosing(false); }, 700);
+                closeTimerRef.current = setTimeout(() => { setMenuOpen(false); setIsMenuClosing(false); }, 1200);
               };
               return (
                 <>
@@ -409,21 +409,21 @@ export default function Header({
               <Link href={`${localeFromPath || ''}/shop`} onClick={() => {
                 if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
                 setIsMenuClosing(true);
-                closeTimerRef.current = setTimeout(() => { setMenuOpen(false); setIsMenuClosing(false); }, 700);
+                closeTimerRef.current = setTimeout(() => { setMenuOpen(false); setIsMenuClosing(false); }, 1200);
               }} aria-label="Search" className="p-1">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-4.35-4.35M10 18a8 8 0 100-16 8 8 0 000 16z"/></svg>
               </Link>
               <Link href={`${localeFromPath || ''}/cart`} onClick={() => {
                 if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
                 setIsMenuClosing(true);
-                closeTimerRef.current = setTimeout(() => { setMenuOpen(false); setIsMenuClosing(false); }, 700);
+                closeTimerRef.current = setTimeout(() => { setMenuOpen(false); setIsMenuClosing(false); }, 1200);
               }} aria-label="Cart" className="p-1">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 11-8 0"/></svg>
               </Link>
               <Link href={`${localeFromPath || ''}/wishlist`} onClick={() => {
                 if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
                 setIsMenuClosing(true);
-                closeTimerRef.current = setTimeout(() => { setMenuOpen(false); setIsMenuClosing(false); }, 700);
+                closeTimerRef.current = setTimeout(() => { setMenuOpen(false); setIsMenuClosing(false); }, 1200);
               }} aria-label="Favorites" className="p-1">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
               </Link>
@@ -464,7 +464,7 @@ export default function Header({
             <Link href={`${localeFromPath || ''}/contact`} onClick={() => {
               if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
               setIsMenuClosing(true);
-              closeTimerRef.current = setTimeout(() => { setMenuOpen(false); setIsMenuClosing(false); }, 700);
+              closeTimerRef.current = setTimeout(() => { setMenuOpen(false); setIsMenuClosing(false); }, 1200);
             }} className="mt-2 fancy-underline">Contact</Link>
           </div>
         </div>

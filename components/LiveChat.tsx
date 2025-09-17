@@ -50,9 +50,11 @@ export default function LiveChat() {
         className="w-11 h-11 rounded-full flex items-center justify-center transition-colors"
         style={{ backgroundColor: '#000000' }}
       >
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="block">
-          <path d="M20.5 3.5A11 11 0 0 0 2 12.7L1 22l9.5-1A11 11 0 1 0 20.5 3.5Z" stroke="#fff" strokeWidth="1.5" fill="none" />
-          <path d="M16.5 14.2c-.2-.1-1.2-.6-1.4-.7-.2-.1-.3-.1-.5.1-.1.2-.5.6-.6.8-.1.1-.2.1-.4 0-.2-.1-.8-.3-1.6-1.0-.6-.5-1.0-1.1-1.1-1.3-.1-.2 0-.3.1-.4.1-.1.2-.2.3-.4.1-.1.1-.2.1-.3s0-.2-.1-.3c0-.1-.4-1-.5-1.3-.1-.3-.3-.3-.5-.3h-.4c-.2 0-.4.1-.6.3-.2.2-.8.7-.8 1.8 0 1.1.8 2.1.9 2.3.1.1 1.6 2.4 3.8 3.4.5.2.9.4 1.2.5.5.1.9.1 1.3.1.4-.1 1.2-.5 1.4-1 .2-.5.2-.9.1-1-.1-.1-.2-.2-.5-.3Z" fill="#fff" />
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="block">
+          <circle cx="12" cy="12" r="9" stroke="#fff" strokeWidth="1.6"/>
+          <path d="M8 14c1.2 1 2.5 1.5 4 1.5S14.8 15 16 14" stroke="#fff" strokeWidth="1.6" strokeLinecap="round"/>
+          <circle cx="9" cy="10" r="1" fill="#fff"/>
+          <circle cx="15" cy="10" r="1" fill="#fff"/>
         </svg>
       </button>
     </div>
