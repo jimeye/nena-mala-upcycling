@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import CartIcon from './cart/CartIcon';
@@ -54,6 +54,8 @@ export default function Header({
   const [borderColor, setBorderColor] = useState(baseColor);
   const [iconColors, setIconColors] = useState<string[]>([baseColor, baseColor, baseColor, baseColor]);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isMenuClosing, setIsMenuClosing] = useState(false);
+  const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [cartPop, setCartPop] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [lang, setLang] = useState<'en' | 'mx' | 'fr'>('en');
@@ -333,7 +335,7 @@ export default function Header({
                 <div className="p-0 flex items-center justify-center" style={{ transform: 'scale(1.15)' }}>
                   <CartIcon onClick={() => setDrawerOpen(true)} color={iconColors[2]} />
                 </div>
-                <button className="transition-colors p-0" onClick={() => { onMenuClick?.(); setMenuOpen((v) => !v); }} aria-label="Menu">
+                <button className="transition-colors p-0" onClick={() => { onMenuClick?.(); setIsMenuClosing(false); setMenuOpen((v) => !v); }} aria-label="Menu">
                   <svg className="transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: iconColors[3], transition: 'color 0.3s ease', width: '23px', height: '23px' }}>
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
                   </svg>
@@ -358,11 +360,15 @@ export default function Header({
 
       <CartDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)} />
 
-      {menuOpen && (
+      {(menuOpen || isMenuClosing) && (
         <div className="fixed inset-0 z-40">
-          <button aria-label="Close menu overlay" className="absolute inset-0" style={{ backgroundColor: isShopTheme ? 'rgba(0,0,0,0.65)' : hexToRgba(baseColor, 0.35) }} onClick={() => setMenuOpen(false)}></button>
+          <button aria-label="Close menu overlay" className="absolute inset-0" style={{ backgroundColor: isShopTheme ? 'rgba(0,0,0,0.65)' : hexToRgba(baseColor, 0.35) }} onClick={() => {
+            if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
+            setIsMenuClosing(true);
+            closeTimerRef.current = setTimeout(() => { setMenuOpen(false); setIsMenuClosing(false); }, 700);
+          }}></button>
           <div
-            className="absolute right-0 top-0 h-full w-[calc(41%+30px)] md:w-1/2 lg:w-[60%] md:max-w-none p-6 flex flex-col gap-1 animate-curtain-in"
+            className={`absolute right-0 top-0 h-full w-[calc(41%+30px)] md:w-1/2 lg:w-[60%] md:max-w-none p-6 flex flex-col gap-1 ${isMenuClosing ? 'animate-curtain-out' : 'animate-curtain-in'}`}
             style={{
               fontFamily: 'CourierRegular, "Courier New", Courier, monospace',
               backgroundColor: isShopTheme ? baseColor : '#ffffff',
@@ -370,28 +376,55 @@ export default function Header({
             }}
           >
             <div className="flex items-center justify-end mb-1">
-              <button aria-label="Close menu" onClick={() => setMenuOpen(false)} className="p-1">✕</button>
+              <button aria-label="Close menu" onClick={() => {
+                if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
+                setIsMenuClosing(true);
+                closeTimerRef.current = setTimeout(() => { setMenuOpen(false); setIsMenuClosing(false); }, 700);
+              }} className="p-1">✕</button>
             </div>
-            <Link href={`${localeFromPath || ''}/about`} onClick={() => setMenuOpen(false)} className="fancy-underline">About</Link>
-            <Link href={`${localeFromPath || ''}/`} onClick={() => setMenuOpen(false)} className="fancy-underline">Home</Link>
-            <Link href={`${localeFromPath || ''}/shop`} onClick={() => setMenuOpen(false)} className="fancy-underline">Shop</Link>
-            <Link href={`${localeFromPath || ''}/shop/dress`} onClick={() => setMenuOpen(false)} className="fancy-underline">Dress</Link>
-            <Link href={`${localeFromPath || ''}/shop/top`} onClick={() => setMenuOpen(false)} className="fancy-underline">Top</Link>
-            <Link href={`${localeFromPath || ''}/shop/skirt`} onClick={() => setMenuOpen(false)} className="fancy-underline">Skirt</Link>
-            <Link href={`${localeFromPath || ''}/shop/denim`} onClick={() => setMenuOpen(false)} className="fancy-underline">Denim</Link>
-            <Link href={`${localeFromPath || ''}/shop/pants`} onClick={() => setMenuOpen(false)} className="fancy-underline">Pants</Link>
-            <Link href={`${localeFromPath || ''}/shop/two-piece`} onClick={() => setMenuOpen(false)} className="fancy-underline">2-piece</Link>
-            <Link href={`${localeFromPath || ''}/all-items`} onClick={() => setMenuOpen(false)} className="fancy-underline">All Items</Link>
+            {(() => {
+              const closeMenu = () => {
+                if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
+                setIsMenuClosing(true);
+                closeTimerRef.current = setTimeout(() => { setMenuOpen(false); setIsMenuClosing(false); }, 700);
+              };
+              return (
+                <>
+                  <Link href={`${localeFromPath || ''}/about`} onClick={closeMenu} className="fancy-underline">About</Link>
+                  <Link href={`${localeFromPath || ''}/`} onClick={closeMenu} className="fancy-underline">Home</Link>
+                  <Link href={`${localeFromPath || ''}/shop`} onClick={closeMenu} className="fancy-underline">Shop</Link>
+                  <Link href={`${localeFromPath || ''}/shop/dress`} onClick={closeMenu} className="fancy-underline">Dress</Link>
+                  <Link href={`${localeFromPath || ''}/shop/top`} onClick={closeMenu} className="fancy-underline">Top</Link>
+                  <Link href={`${localeFromPath || ''}/shop/skirt`} onClick={closeMenu} className="fancy-underline">Skirt</Link>
+                  <Link href={`${localeFromPath || ''}/shop/denim`} onClick={closeMenu} className="fancy-underline">Denim</Link>
+                  <Link href={`${localeFromPath || ''}/shop/pants`} onClick={closeMenu} className="fancy-underline">Pants</Link>
+                  <Link href={`${localeFromPath || ''}/shop/two-piece`} onClick={closeMenu} className="fancy-underline">2-piece</Link>
+                  <Link href={`${localeFromPath || ''}/all-items`} onClick={closeMenu} className="fancy-underline">All Items</Link>
+                </>
+              );
+            })()}
             
             <div className="h-px w-full" style={{ backgroundColor: isShopTheme ? 'rgba(255,255,255,0.25)' : 'rgba(0,0,0,0.15)' }} />
             <div className="flex items-center gap-4">
-              <Link href={`${localeFromPath || ''}/shop`} onClick={() => setMenuOpen(false)} aria-label="Search" className="p-1">
+              <Link href={`${localeFromPath || ''}/shop`} onClick={() => {
+                if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
+                setIsMenuClosing(true);
+                closeTimerRef.current = setTimeout(() => { setMenuOpen(false); setIsMenuClosing(false); }, 700);
+              }} aria-label="Search" className="p-1">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-4.35-4.35M10 18a8 8 0 100-16 8 8 0 000 16z"/></svg>
               </Link>
-              <Link href={`${localeFromPath || ''}/cart`} onClick={() => setMenuOpen(false)} aria-label="Cart" className="p-1">
+              <Link href={`${localeFromPath || ''}/cart`} onClick={() => {
+                if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
+                setIsMenuClosing(true);
+                closeTimerRef.current = setTimeout(() => { setMenuOpen(false); setIsMenuClosing(false); }, 700);
+              }} aria-label="Cart" className="p-1">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 11-8 0"/></svg>
               </Link>
-              <Link href={`${localeFromPath || ''}/wishlist`} onClick={() => setMenuOpen(false)} aria-label="Favorites" className="p-1">
+              <Link href={`${localeFromPath || ''}/wishlist`} onClick={() => {
+                if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
+                setIsMenuClosing(true);
+                closeTimerRef.current = setTimeout(() => { setMenuOpen(false); setIsMenuClosing(false); }, 700);
+              }} aria-label="Favorites" className="p-1">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
               </Link>
               {/* Flags alignés sur la même ligne que les icônes */}
@@ -428,10 +461,14 @@ export default function Header({
             </div>
 
             {/* bloc drapeaux supprimé: intégré à la ligne des icônes */}
-            <Link href={`${localeFromPath || ''}/contact`} onClick={() => setMenuOpen(false)} className="mt-2 fancy-underline">Contact</Link>
+            <Link href={`${localeFromPath || ''}/contact`} onClick={() => {
+              if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
+              setIsMenuClosing(true);
+              closeTimerRef.current = setTimeout(() => { setMenuOpen(false); setIsMenuClosing(false); }, 700);
+            }} className="mt-2 fancy-underline">Contact</Link>
           </div>
         </div>
       )}
     </header>
   );
-} 
+}
