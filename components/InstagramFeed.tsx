@@ -73,7 +73,7 @@ export default function InstagramFeed() {
   const { posts } = useInstagram();
   const widgetUrl = process.env.NEXT_PUBLIC_IG_WIDGET_URL;
   return (
-    <section className="px-[15px]">
+    <section className="px-0 lg:px-[15px]">
       <div className="mb-0 flex flex-col items-center gap-1">
         <Link href="https://www.instagram.com/nenamala___17/" target="_blank" className="underline-offset-4 hover:underline">
           <h2 className="text-xl md:text-2xl font-bold text-center">Instagram</h2>

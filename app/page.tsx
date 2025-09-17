@@ -10,8 +10,8 @@ export default function HomePage() {
     <div className="bg-white min-h-screen">
       <Header brandText="Nena Mala" />
       
-      {/* Hero Slider (aligné aux marges de la home) */}
-      <section className="px-[15px]">
+      {/* Hero Slider (marges desktop uniquement) */}
+      <section className="px-0 lg:px-[15px]">
         <HeroSlider
           heightClass="h-[85vh] md:h-[95vh]"
           overlayClass="bg-transparent"
@@ -31,8 +31,8 @@ export default function HomePage() {
       {/* Petit espace entre produits et vidéo */}
       <div className="pt-1"></div>
       
-      {/* Vidéo process avant Instagram */}
-      <section className="px-[15px]">
+      {/* Vidéo process avant Instagram (marges desktop uniquement) */}
+      <section className="px-0 lg:px-[15px]">
         <VideoPlayer
           poster="/video/nena-mala-process-poster.jpg"
           sources={[
