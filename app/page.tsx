@@ -10,14 +10,16 @@ export default function HomePage() {
     <div className="bg-white min-h-screen">
       <Header brandText="Nena Mala" />
       
-      {/* Hero Slider */}
-      <HeroSlider
-        heightClass="h-[85vh] md:h-[95vh]"
-        overlayClass="bg-transparent"
-        intervalMs={3000}
-        autoPlay
-        showCounter
-      />
+      {/* Hero Slider (aligné aux marges de la home) */}
+      <section className="px-[15px]">
+        <HeroSlider
+          heightClass="h-[85vh] md:h-[95vh]"
+          overlayClass="bg-transparent"
+          intervalMs={3000}
+          autoPlay
+          showCounter
+        />
+      </section>
       
       {/* Products après le slider */}
       <div className="pt-1 overflow-x-hidden">
