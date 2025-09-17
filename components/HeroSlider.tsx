@@ -11,6 +11,7 @@ export type HeroSlide = {
 
 export type HeroSliderProps = {
   slides?: HeroSlide[];
+  mobileSlides?: HeroSlide[];
   intervalMs?: number;
   heightClass?: string; // ex: "h-[85vh] md:h-[95vh]"
   overlayClass?: string; // ex: "bg-black/10"
@@ -23,6 +24,7 @@ export type HeroSliderProps = {
 
 export default function HeroSlider({
   slides: slidesProp,
+  mobileSlides: mobileSlidesProp,
   intervalMs = 5000,
   heightClass = 'h-[85vh] md:h-[95vh]',
   overlayClass = 'bg-black/10',
@@ -59,7 +61,44 @@ export default function HeroSlider({
     }
   ]), []);
 
-  const slides = slidesProp && slidesProp.length > 0 ? slidesProp : defaultSlides;
+  const defaultMobileSlides: HeroSlide[] = useMemo(() => ([
+    {
+      image: '/nena-mala-hero-static-acceuil-1-mob.webp',
+      title: 'upcycling. crafted. conscious.',
+      position: 'center',
+      verticalPosition: 'center'
+    },
+    {
+      image: '/nena-mala-hero-static-acceuil-2-mob.webp',
+      title: 'sustainable fashion',
+      position: 'center',
+      verticalPosition: 'bottom'
+    },
+    {
+      image: '/nena-mala-hero-static-acceuil-3-mob.webp',
+      title: 'limited edition',
+      position: 'center',
+      verticalPosition: 'top'
+    },
+    {
+      image: '/nena-mala-hero-static-acceuil-4-mob.webp',
+      title: 'Asymmetrical and straight, soft and always strongly feminine, big and small, dresses envelope the body with ethereal lightness, creating interweavings and daring meekness.',
+      position: 'center',
+      verticalPosition: 'bottom'
+    }
+  ]), []);
+
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const onResize = () => setIsMobile(typeof window !== 'undefined' && window.innerWidth < 768);
+    onResize();
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
+
+  const slidesBase = slidesProp && slidesProp.length > 0 ? slidesProp : defaultSlides;
+  const mobileSlidesBase = mobileSlidesProp && mobileSlidesProp.length > 0 ? mobileSlidesProp : defaultMobileSlides;
+  const slides = isMobile ? mobileSlidesBase : slidesBase;
 
   // Eviter les divergences SSR/CSR: n'afficher le slider qu'après montage
   const [mounted, setMounted] = useState(false);
@@ -69,6 +108,8 @@ export default function HeroSlider({
     const i = Math.max(0, Math.min(startIndex, slides.length - 1));
     return i;
   });
+
+  // SUPPR: logique de rotation mobile et ratio — retour à la version originale
 
   useEffect(() => {
     if (!autoPlay) return;
@@ -110,6 +151,7 @@ export default function HeroSlider({
               className="absolute inset-0 bg-cover bg-center bg-no-repeat"
               style={{
                 backgroundImage: `url('${slide.image}')`,
+                backgroundPosition: 'center center'
               }}
             ></div>
             

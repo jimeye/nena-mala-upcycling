@@ -13,7 +13,7 @@ export default function HomePage() {
       {/* Hero Slider */}
       <HeroSlider
         heightClass="h-[85vh] md:h-[95vh]"
-        overlayClass="bg-black/10"
+        overlayClass="bg-transparent"
         intervalMs={5000}
         autoPlay
         showCounter
