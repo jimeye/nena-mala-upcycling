@@ -5,7 +5,7 @@ export const metadata = {
 export default function TestLiveChatPage() {
   return (
     <main className="px-[15px] py-8 md:py-12 text-black">
-      <h1 className="text-xl md:text-2xl mb-4">LiveChat – 10 propositions</h1>
+      <h1 className="text-xl md:text-2xl mb-4">LiveChat – 20 propositions</h1>
       <p className="text-sm mb-6">Couleurs identiques: fond noir (#000), icône blanche.</p>
 
       <div className="grid grid-cols-5 md:grid-cols-10 gap-4">
@@ -85,6 +85,85 @@ export default function TestLiveChatPage() {
             <path d="M11 11V5a1 1 0 1 1 2 0v6" stroke="#fff" strokeWidth="1.6" strokeLinecap="round"/>
             <path d="M14 12V6a1 1 0 1 1 2 0v7" stroke="#fff" strokeWidth="1.6" strokeLinecap="round"/>
             <path d="M6 13c0 3.3 2.7 6 6 6 3 0 5.6-2.2 5.9-5.2" stroke="#fff" strokeWidth="1.6" strokeLinecap="round"/>
+          </svg>
+        </button>
+
+        {/* 11. Message + plus */}
+        <button className="w-12 h-12 rounded-full flex items-center justify-center bg-black">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 6h12a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H9l-4 3v-3H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z" stroke="#fff" strokeWidth="1.6"/>
+            <path d="M19 6v-2M19 4h2M19 4h-2" stroke="#fff" strokeWidth="1.6" strokeLinecap="round"/>
+          </svg>
+        </button>
+
+        {/* 12. Etoile */}
+        <button className="w-12 h-12 rounded-full flex items-center justify-center bg-black">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 3l2.7 5.5 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.8 1-6.1-4.4-4.3 6.1-.9L12 3Z" stroke="#fff" strokeWidth="1.4"/>
+          </svg>
+        </button>
+
+        {/* 13. Avion papier (envoyer) */}
+        <button className="w-12 h-12 rounded-full flex items-center justify-center bg-black">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 11.5L21 3 13 21l-2.5-7.5L3 11.5Z" stroke="#fff" strokeWidth="1.6" strokeLinejoin="round"/>
+          </svg>
+        </button>
+
+        {/* 14. Sourire */}
+        <button className="w-12 h-12 rounded-full flex items-center justify-center bg-black">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="9" stroke="#fff" strokeWidth="1.6"/>
+            <path d="M8 14c1.2 1 2.5 1.5 4 1.5S14.8 15 16 14" stroke="#fff" strokeWidth="1.6" strokeLinecap="round"/>
+            <circle cx="9" cy="10" r="1" fill="#fff"/>
+            <circle cx="15" cy="10" r="1" fill="#fff"/>
+          </svg>
+        </button>
+
+        {/* 15. Coeur plein */}
+        <button className="w-12 h-12 rounded-full flex items-center justify-center bg-black">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.76 20.68c-.47.35-1.05.35-1.52 0C6.4 16.94 3 13.86 3 10.2 3 7.72 4.9 6 7.13 6c1.37 0 2.7.66 3.37 1.9C11.54 6.66 12.87 6 14.24 6 16.5 6 18.4 7.72 18.4 10.2c0 3.66-3.4 6.74-5.64 10.48z" fill="#fff"/>
+          </svg>
+        </button>
+
+        {/* 16. Info cercle */}
+        <button className="w-12 h-12 rounded-full flex items-center justify-center bg-black">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="9" stroke="#fff" strokeWidth="1.6"/>
+            <path d="M12 10v7" stroke="#fff" strokeWidth="1.6" strokeLinecap="round"/>
+            <circle cx="12" cy="7.5" r="1" fill="#fff"/>
+          </svg>
+        </button>
+
+        {/* 17. Check cercle */}
+        <button className="w-12 h-12 rounded-full flex items-center justify-center bg-black">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="9" stroke="#fff" strokeWidth="1.6"/>
+            <path d="M8 12.5l2.5 2.5L16 9.5" stroke="#fff" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </button>
+
+        {/* 18. Horloge (réponse rapide) */}
+        <button className="w-12 h-12 rounded-full flex items-center justify-center bg-black">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="8.5" stroke="#fff" strokeWidth="1.6"/>
+            <path d="M12 7v5l3 2" stroke="#fff" strokeWidth="1.6" strokeLinecap="round"/>
+          </svg>
+        </button>
+
+        {/* 19. Vagues son (appel) */}
+        <button className="w-12 h-12 rounded-full flex items-center justify-center bg-black">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 12a7 7 0 0 1 7-7M5 12a7 7 0 0 0 7 7M5 12h0" stroke="#fff" strokeWidth="1.6" strokeLinecap="round"/>
+            <path d="M14 7.5c1.7 1.2 2.5 2.7 2.5 4.5s-.8 3.3-2.5 4.5" stroke="#fff" strokeWidth="1.6" strokeLinecap="round"/>
+          </svg>
+        </button>
+
+        {/* 20. Epinglette (support) */}
+        <button className="w-12 h-12 rounded-full flex items-center justify-center bg-black">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 3h12l-4 7v5l-4 4v-9L6 3Z" stroke="#fff" strokeWidth="1.6" strokeLinejoin="round"/>
           </svg>
         </button>
       </div>
