@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useMemo, useState } from 'react';
 
-type Variant = 'elegant' | 'curtain' | 'wipe-blur' | 'parallax' | 'duotone' | 'typo' | 'curtain-left' | 'curtain-right' | 'curtain-top' | 'curtain-bottom' | 'curtain-split' | 'photo-curtain-left' | 'photo-curtain-right' | 'photo-curtain-top' | 'photo-curtain-bottom' | 'photo-curtain-split';
+type Variant = 'elegant' | 'curtain' | 'wipe-blur' | 'parallax' | 'duotone' | 'typo' | 'curtain-left' | 'curtain-right' | 'curtain-top' | 'curtain-bottom' | 'curtain-split' | 'photo-curtain-left' | 'photo-curtain-right' | 'photo-curtain-top' | 'photo-curtain-bottom' | 'photo-curtain-split' | 'combo-photo-split-bottom' | 'combo-top-photo-right';
 
 const slides = [
   '/nena-mala-hero-static-acceuil-1.webp',
@@ -128,6 +128,40 @@ export default function HeroTransitionDemo({ variant }: { variant: Variant }) {
         {/* deux moitiés de la photo précédente */}
         <div key={`L-${i}`} className="absolute top-0 bottom-0 right-1/2 w-1/2 animate-curtain-split-left-slow" style={{ backgroundImage: `url(${prev})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'left center', backgroundSize: '200% 100%' }} />
         <div key={`R-${i}`} className="absolute top-0 bottom-0 left-1/2 w-1/2 animate-curtain-split-right-slow" style={{ backgroundImage: `url(${prev})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right center', backgroundSize: '200% 100%' }} />
+      </div>
+    );
+  }
+
+  // ===== Combos =====
+  // Combo 1: alterne Photo Curtain split (pairs) / Photo Curtain bas (impairs)
+  if (variant === 'combo-photo-split-bottom') {
+    const useSplit = i % 2 === 0;
+    return (
+      <div className="relative h-[60vh] md:h-[80vh] overflow-hidden">
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${current})` }} />
+        {useSplit ? (
+          <>
+            <div key={`L-${i}`} className="absolute top-0 bottom-0 right-1/2 w-1/2 animate-curtain-split-left-slow" style={{ backgroundImage: `url(${prev})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'left center', backgroundSize: '200% 100%' }} />
+            <div key={`R-${i}`} className="absolute top-0 bottom-0 left-1/2 w-1/2 animate-curtain-split-right-slow" style={{ backgroundImage: `url(${prev})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right center', backgroundSize: '200% 100%' }} />
+          </>
+        ) : (
+          <div key={i} className="absolute inset-0 bg-cover bg-center animate-curtain-bottom-slow" style={{ backgroundImage: `url(${prev})` }} />
+        )}
+      </div>
+    );
+  }
+
+  // Combo 2: alterne Curtain haut (rouge) (pairs) / Photo Curtain droite (impairs)
+  if (variant === 'combo-top-photo-right') {
+    const useTop = i % 2 === 0;
+    return (
+      <div className="relative h-[60vh] md:h-[80vh] overflow-hidden bg-black">
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${current})` }} />
+        {useTop ? (
+          <div className="absolute inset-0 bg-[#da3832] animate-curtain-top" />
+        ) : (
+          <div key={i} className="absolute inset-0 bg-cover bg-center animate-curtain-right-slow" style={{ backgroundImage: `url(${prev})` }} />
+        )}
       </div>
     );
   }

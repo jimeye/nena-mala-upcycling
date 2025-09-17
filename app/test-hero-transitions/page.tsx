@@ -62,6 +62,14 @@ export default function TestHeroTransitionsPage() {
           <HeroTransitionDemo variant="photo-curtain-split" />
         </section>
         <section>
+          <h2 className="text-xl md:text-2xl mb-3">Combo — Photo split / Photo bas (alterné)</h2>
+          <HeroTransitionDemo variant="combo-photo-split-bottom" />
+        </section>
+        <section>
+          <h2 className="text-xl md:text-2xl mb-3">Combo — Curtain haut / Photo droite (alterné)</h2>
+          <HeroTransitionDemo variant="combo-top-photo-right" />
+        </section>
+        <section>
           <h2 className="text-xl md:text-2xl mb-3">Wipe + blur</h2>
           <HeroTransitionDemo variant="wipe-blur" />
         </section>
