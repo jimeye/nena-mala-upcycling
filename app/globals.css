@@ -161,26 +161,26 @@ a:hover {
 
 /* ===== Hero transitions demo ===== */
 @keyframes kenburns-in {
-  0% { transform: scale(1.03); }
+  0% { transform: scale(1.08); }
   100% { transform: scale(1); }
 }
 .animate-kenburns-in { animation: kenburns-in 9s ease-out both; }
 
 @keyframes curtain-wipe {
-  0% { transform: translateX(0) skewX(-8deg); }
-  100% { transform: translateX(110%) skewX(-8deg); }
+  0% { transform: translateX(0) skewX(-12deg); }
+  100% { transform: translateX(120%) skewX(-12deg); }
 }
-.animate-curtain-wipe { animation: curtain-wipe 900ms cubic-bezier(.2,.7,.2,1) forwards; }
+.animate-curtain-wipe { animation: curtain-wipe 1200ms cubic-bezier(.2,.7,.2,1) forwards; }
 
 @keyframes wipe-blur-in {
-  0% { transform: translateX(-4%); filter: blur(6px); opacity: .0; }
+  0% { transform: translateX(-12%); filter: blur(14px); opacity: 0; }
   100% { transform: translateX(0); filter: blur(0); opacity: 1; }
 }
-.animate-wipe-blur-in { animation: wipe-blur-in 800ms cubic-bezier(.2,.7,.2,1) both; }
+.animate-wipe-blur-in { animation: wipe-blur-in 1100ms cubic-bezier(.2,.7,.2,1) both; }
 
 @keyframes parallax-pan {
-  0% { transform: translateX(-2%); }
-  100% { transform: translateX(2%); }
+  0% { transform: translateX(-5%) scale(1.02); }
+  100% { transform: translateX(5%) scale(1); }
 }
 .animate-parallax-pan { animation: parallax-pan 9s ease-in-out infinite alternate; }
 
@@ -193,7 +193,7 @@ a:hover {
 .animate-flash-duotone { animation: flash-duotone 480ms cubic-bezier(.2,.7,.2,1) both; }
 
 @keyframes typo-fade-up {
-  0% { opacity: 0; transform: translateY(12px); }
+  0% { opacity: 0; transform: translateY(24px); letter-spacing: .02em; }
   100% { opacity: 1; transform: translateY(0); }
 }
-.animate-typo-fade-up { animation: typo-fade-up 420ms cubic-bezier(.2,.7,.2,1) both 150ms; }
+.animate-typo-fade-up { animation: typo-fade-up 600ms cubic-bezier(.2,.7,.2,1) both 150ms; }

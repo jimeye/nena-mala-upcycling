@@ -41,6 +41,7 @@ export default function HeroTransitionDemo({ variant }: { variant: Variant }) {
       <div className="relative h-[60vh] md:h-[80vh] overflow-hidden bg-black">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${current})` }} />
         <div className="absolute inset-0 bg-[#da3832] animate-curtain-wipe" />
+        <div className="absolute top-0 bottom-0 left-0 w-[6px] bg-white/50 mix-blend-overlay animate-curtain-wipe" />
       </div>
     );
   }
