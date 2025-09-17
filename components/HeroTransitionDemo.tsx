@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useMemo, useState } from 'react';
 
-type Variant = 'elegant' | 'curtain' | 'wipe-blur' | 'parallax' | 'duotone' | 'typo';
+type Variant = 'elegant' | 'curtain' | 'wipe-blur' | 'parallax' | 'duotone' | 'typo' | 'curtain-left' | 'curtain-right' | 'curtain-top' | 'curtain-bottom' | 'curtain-split';
 
 const slides = [
   '/nena-mala-hero-static-acceuil-1.webp',
@@ -42,6 +42,48 @@ export default function HeroTransitionDemo({ variant }: { variant: Variant }) {
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${current})` }} />
         <div className="absolute inset-0 bg-[#da3832] animate-curtain-wipe" />
         <div className="absolute top-0 bottom-0 left-0 w-[6px] bg-white/50 mix-blend-overlay animate-curtain-wipe" />
+      </div>
+    );
+  }
+
+  if (variant === 'curtain-left') {
+    return (
+      <div className="relative h-[60vh] md:h-[80vh] overflow-hidden bg-black">
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${current})` }} />
+        <div className="absolute inset-0 bg-[#da3832] animate-curtain-left" />
+      </div>
+    );
+  }
+  if (variant === 'curtain-right') {
+    return (
+      <div className="relative h-[60vh] md:h-[80vh] overflow-hidden bg-black">
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${current})` }} />
+        <div className="absolute inset-0 bg-[#da3832] animate-curtain-right" />
+      </div>
+    );
+  }
+  if (variant === 'curtain-top') {
+    return (
+      <div className="relative h-[60vh] md:h-[80vh] overflow-hidden bg-black">
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${current})` }} />
+        <div className="absolute inset-0 bg-[#da3832] animate-curtain-top" />
+      </div>
+    );
+  }
+  if (variant === 'curtain-bottom') {
+    return (
+      <div className="relative h-[60vh] md:h-[80vh] overflow-hidden bg-black">
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${current})` }} />
+        <div className="absolute inset-0 bg-[#da3832] animate-curtain-bottom" />
+      </div>
+    );
+  }
+  if (variant === 'curtain-split') {
+    return (
+      <div className="relative h-[60vh] md:h-[80vh] overflow-hidden bg-black">
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${current})` }} />
+        <div className="absolute top-0 bottom-0 left-1/2 w-1/2 bg-[#da3832] origin-left animate-curtain-split-right" />
+        <div className="absolute top-0 bottom-0 right-1/2 w-1/2 bg-[#da3832] origin-right animate-curtain-split-left" />
       </div>
     );
   }

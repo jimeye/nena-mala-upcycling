@@ -172,6 +172,23 @@ a:hover {
 }
 .animate-curtain-wipe { animation: curtain-wipe 1200ms cubic-bezier(.2,.7,.2,1) forwards; }
 
+/* Rideaux directionnels */
+@keyframes curtain-from-left { 0% { transform: translateX(0); } 100% { transform: translateX(110%); } }
+@keyframes curtain-from-right { 0% { transform: translateX(0); } 100% { transform: translateX(-110%); } }
+@keyframes curtain-from-top { 0% { transform: translateY(0); } 100% { transform: translateY(110%); } }
+@keyframes curtain-from-bottom { 0% { transform: translateY(0); } 100% { transform: translateY(-110%); } }
+
+.animate-curtain-left { animation: curtain-from-left 900ms cubic-bezier(.2,.7,.2,1) forwards; }
+.animate-curtain-right { animation: curtain-from-right 900ms cubic-bezier(.2,.7,.2,1) forwards; }
+.animate-curtain-top { animation: curtain-from-top 900ms cubic-bezier(.2,.7,.2,1) forwards; }
+.animate-curtain-bottom { animation: curtain-from-bottom 900ms cubic-bezier(.2,.7,.2,1) forwards; }
+
+/* Rideau split: deux panneaux s'ouvrent au centre vers les côtés */
+@keyframes curtain-split-left { 0% { transform: translateX(0); } 100% { transform: translateX(-120%); } }
+@keyframes curtain-split-right { 0% { transform: translateX(0); } 100% { transform: translateX(120%); } }
+.animate-curtain-split-left { animation: curtain-split-left 1000ms cubic-bezier(.2,.7,.2,1) forwards; }
+.animate-curtain-split-right { animation: curtain-split-right 1000ms cubic-bezier(.2,.7,.2,1) forwards; }
+
 @keyframes wipe-blur-in {
   0% { transform: translateX(-12%); filter: blur(14px); opacity: 0; }
   100% { transform: translateX(0); filter: blur(0); opacity: 1; }
