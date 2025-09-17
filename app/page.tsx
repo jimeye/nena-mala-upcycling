@@ -7,7 +7,7 @@ import VideoPlayer from '@/components/VideoPlayer';
 
 export default function HomePage() {
   return (
-    <>
+    <div className="bg-white min-h-screen">
       <Header brandText="Nena Mala" />
       
       {/* Hero Slider */}
@@ -50,6 +50,6 @@ export default function HomePage() {
       <Footer />
       
       {/* Bouton étoile legacy supprimé (LiveChat dédié est utilisé) */}
-    </>
+    </div>
   );
 } 
