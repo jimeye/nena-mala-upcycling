@@ -68,7 +68,7 @@ export default function HeroTransitionDemo({ variant }: { variant: Variant }) {
         {/* voile permanent léger */}
         <div className="absolute inset-0 mix-blend-multiply bg-[#da3832]/10" />
         {/* flash renforcé */}
-        <div className="absolute inset-0 mix-blend-multiply bg-[#da3832] opacity-0 animate-flash-duotone" />
+        <div key={i} className="absolute inset-0 mix-blend-multiply bg-[#da3832] opacity-0 animate-flash-duotone" />
       </div>
     );
   }
