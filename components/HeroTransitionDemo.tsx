@@ -65,6 +65,9 @@ export default function HeroTransitionDemo({ variant }: { variant: Variant }) {
     return (
       <div className="relative h-[60vh] md:h-[80vh] overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${current})` }} />
+        {/* voile permanent léger */}
+        <div className="absolute inset-0 mix-blend-multiply bg-[#da3832]/10" />
+        {/* flash renforcé */}
         <div className="absolute inset-0 mix-blend-multiply bg-[#da3832] opacity-0 animate-flash-duotone" />
       </div>
     );

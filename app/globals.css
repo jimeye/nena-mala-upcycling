@@ -185,10 +185,12 @@ a:hover {
 .animate-parallax-pan { animation: parallax-pan 9s ease-in-out infinite alternate; }
 
 @keyframes flash-duotone {
-  0% { opacity: .6; }
+  0% { opacity: 0; }
+  25% { opacity: .95; }
+  60% { opacity: .75; }
   100% { opacity: 0; }
 }
-.animate-flash-duotone { animation: flash-duotone 120ms ease-out both; }
+.animate-flash-duotone { animation: flash-duotone 480ms cubic-bezier(.2,.7,.2,1) both; }
 
 @keyframes typo-fade-up {
   0% { opacity: 0; transform: translateY(12px); }
