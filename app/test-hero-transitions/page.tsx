@@ -42,6 +42,26 @@ export default function TestHeroTransitionsPage() {
           <HeroTransitionDemo variant="curtain-split" />
         </section>
         <section>
+          <h2 className="text-xl md:text-2xl mb-3">Photo Curtain — de gauche</h2>
+          <HeroTransitionDemo variant="photo-curtain-left" />
+        </section>
+        <section>
+          <h2 className="text-xl md:text-2xl mb-3">Photo Curtain — de droite</h2>
+          <HeroTransitionDemo variant="photo-curtain-right" />
+        </section>
+        <section>
+          <h2 className="text-xl md:text-2xl mb-3">Photo Curtain — du haut</h2>
+          <HeroTransitionDemo variant="photo-curtain-top" />
+        </section>
+        <section>
+          <h2 className="text-xl md:text-2xl mb-3">Photo Curtain — du bas</h2>
+          <HeroTransitionDemo variant="photo-curtain-bottom" />
+        </section>
+        <section>
+          <h2 className="text-xl md:text-2xl mb-3">Photo Curtain — split</h2>
+          <HeroTransitionDemo variant="photo-curtain-split" />
+        </section>
+        <section>
           <h2 className="text-xl md:text-2xl mb-3">Wipe + blur</h2>
           <HeroTransitionDemo variant="wipe-blur" />
         </section>
