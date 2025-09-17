@@ -88,17 +88,33 @@ export default function HeroSlider({
     }
   ]), []);
 
-  const [isMobile, setIsMobile] = useState(false);
+  // Mobile portrait uniquement: en paysage, on force la version desktop
+  const [isMobilePortrait, setIsMobilePortrait] = useState(false);
   useEffect(() => {
-    const onResize = () => setIsMobile(typeof window !== 'undefined' && window.innerWidth < 768);
-    onResize();
+    const compute = () => {
+      try {
+        const mql = window.matchMedia('(max-width: 767px) and (orientation: portrait)');
+        setIsMobilePortrait(mql.matches);
+      } catch {
+        setIsMobilePortrait(window.innerWidth < 768);
+      }
+    };
+    compute();
+    const onResize = () => compute();
     window.addEventListener('resize', onResize);
-    return () => window.removeEventListener('resize', onResize);
+    // écoute orientation si supporté
+    const mql = window.matchMedia('(orientation: portrait)');
+    const onChange = () => compute();
+    try { mql.addEventListener?.('change', onChange); } catch {}
+    return () => {
+      window.removeEventListener('resize', onResize);
+      try { mql.removeEventListener?.('change', onChange); } catch {}
+    };
   }, []);
 
   const slidesBase = slidesProp && slidesProp.length > 0 ? slidesProp : defaultSlides;
   const mobileSlidesBase = mobileSlidesProp && mobileSlidesProp.length > 0 ? mobileSlidesProp : defaultMobileSlides;
-  const slides = isMobile ? mobileSlidesBase : slidesBase;
+  const slides = isMobilePortrait ? mobileSlidesBase : slidesBase;
 
   // Eviter les divergences SSR/CSR: n'afficher le slider qu'après montage
   const [mounted, setMounted] = useState(false);
