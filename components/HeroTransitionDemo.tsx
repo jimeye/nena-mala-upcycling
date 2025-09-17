@@ -93,7 +93,7 @@ export default function HeroTransitionDemo({ variant }: { variant: Variant }) {
     return (
       <div className="relative h-[60vh] md:h-[80vh] overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${current})` }} />
-        <div key={i} className="absolute inset-0 bg-cover bg-center animate-curtain-left" style={{ backgroundImage: `url(${prev})` }} />
+        <div key={i} className="absolute inset-0 bg-cover bg-center animate-curtain-left-slow" style={{ backgroundImage: `url(${prev})` }} />
       </div>
     );
   }
@@ -101,7 +101,7 @@ export default function HeroTransitionDemo({ variant }: { variant: Variant }) {
     return (
       <div className="relative h-[60vh] md:h-[80vh] overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${current})` }} />
-        <div key={i} className="absolute inset-0 bg-cover bg-center animate-curtain-right" style={{ backgroundImage: `url(${prev})` }} />
+        <div key={i} className="absolute inset-0 bg-cover bg-center animate-curtain-right-slow" style={{ backgroundImage: `url(${prev})` }} />
       </div>
     );
   }
@@ -109,7 +109,7 @@ export default function HeroTransitionDemo({ variant }: { variant: Variant }) {
     return (
       <div className="relative h-[60vh] md:h-[80vh] overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${current})` }} />
-        <div key={i} className="absolute inset-0 bg-cover bg-center animate-curtain-top" style={{ backgroundImage: `url(${prev})` }} />
+        <div key={i} className="absolute inset-0 bg-cover bg-center animate-curtain-top-slow" style={{ backgroundImage: `url(${prev})` }} />
       </div>
     );
   }
@@ -117,7 +117,7 @@ export default function HeroTransitionDemo({ variant }: { variant: Variant }) {
     return (
       <div className="relative h-[60vh] md:h-[80vh] overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${current})` }} />
-        <div key={i} className="absolute inset-0 bg-cover bg-center animate-curtain-bottom" style={{ backgroundImage: `url(${prev})` }} />
+        <div key={i} className="absolute inset-0 bg-cover bg-center animate-curtain-bottom-slow" style={{ backgroundImage: `url(${prev})` }} />
       </div>
     );
   }
@@ -126,8 +126,8 @@ export default function HeroTransitionDemo({ variant }: { variant: Variant }) {
       <div className="relative h-[60vh] md:h-[80vh] overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${current})` }} />
         {/* deux moitiés de la photo précédente */}
-        <div key={`L-${i}`} className="absolute top-0 bottom-0 right-1/2 w-1/2 animate-curtain-split-left" style={{ backgroundImage: `url(${prev})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'left center', backgroundSize: '200% 100%' }} />
-        <div key={`R-${i}`} className="absolute top-0 bottom-0 left-1/2 w-1/2 animate-curtain-split-right" style={{ backgroundImage: `url(${prev})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right center', backgroundSize: '200% 100%' }} />
+        <div key={`L-${i}`} className="absolute top-0 bottom-0 right-1/2 w-1/2 animate-curtain-split-left-slow" style={{ backgroundImage: `url(${prev})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'left center', backgroundSize: '200% 100%' }} />
+        <div key={`R-${i}`} className="absolute top-0 bottom-0 left-1/2 w-1/2 animate-curtain-split-right-slow" style={{ backgroundImage: `url(${prev})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right center', backgroundSize: '200% 100%' }} />
       </div>
     );
   }
