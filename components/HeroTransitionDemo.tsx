@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useMemo, useState } from 'react';
 
-type Variant = 'elegant' | 'curtain' | 'wipe-blur' | 'parallax' | 'duotone' | 'typo' | 'curtain-left' | 'curtain-right' | 'curtain-top' | 'curtain-bottom' | 'curtain-split' | 'photo-curtain-left' | 'photo-curtain-right' | 'photo-curtain-top' | 'photo-curtain-bottom' | 'photo-curtain-split' | 'combo-photo-split-bottom' | 'combo-top-photo-right';
+type Variant = 'elegant' | 'curtain' | 'wipe-blur' | 'parallax' | 'duotone' | 'typo' | 'curtain-left' | 'curtain-right' | 'curtain-top' | 'curtain-bottom' | 'curtain-split' | 'photo-curtain-left' | 'photo-curtain-right' | 'photo-curtain-top' | 'photo-curtain-bottom' | 'photo-curtain-split' | 'combo-photo-split-bottom' | 'combo-top-photo-right' | 'combo-photo-split-right-left';
 
 const slides = [
   '/nena-mala-hero-static-acceuil-1.webp',
@@ -161,6 +161,26 @@ export default function HeroTransitionDemo({ variant }: { variant: Variant }) {
           <div className="absolute inset-0 bg-[#da3832] animate-curtain-top" />
         ) : (
           <div key={i} className="absolute inset-0 bg-cover bg-center animate-curtain-right-slow" style={{ backgroundImage: `url(${prev})` }} />
+        )}
+      </div>
+    );
+  }
+
+  // Combo 3: cycle à 3 temps — Photo split → Photo droite → Photo gauche
+  if (variant === 'combo-photo-split-right-left') {
+    const step = i % 3;
+    return (
+      <div className="relative h-[60vh] md:h-[80vh] overflow-hidden">
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${current})` }} />
+        {step === 0 ? (
+          <>
+            <div key={`L-${i}`} className="absolute top-0 bottom-0 right-1/2 w-1/2 animate-curtain-split-left-slow" style={{ backgroundImage: `url(${prev})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'left center', backgroundSize: '200% 100%' }} />
+            <div key={`R-${i}`} className="absolute top-0 bottom-0 left-1/2 w-1/2 animate-curtain-split-right-slow" style={{ backgroundImage: `url(${prev})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right center', backgroundSize: '200% 100%' }} />
+          </>
+        ) : step === 1 ? (
+          <div key={i} className="absolute inset-0 bg-cover bg-center animate-curtain-right-slow" style={{ backgroundImage: `url(${prev})` }} />
+        ) : (
+          <div key={i} className="absolute inset-0 bg-cover bg-center animate-curtain-left-slow" style={{ backgroundImage: `url(${prev})` }} />
         )}
       </div>
     );

@@ -70,6 +70,10 @@ export default function TestHeroTransitionsPage() {
           <HeroTransitionDemo variant="combo-top-photo-right" />
         </section>
         <section>
+          <h2 className="text-xl md:text-2xl mb-3">Combo — Photo split → droite → gauche</h2>
+          <HeroTransitionDemo variant="combo-photo-split-right-left" />
+        </section>
+        <section>
           <h2 className="text-xl md:text-2xl mb-3">Wipe + blur</h2>
           <HeroTransitionDemo variant="wipe-blur" />
         </section>
