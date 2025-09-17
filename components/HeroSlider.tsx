@@ -135,6 +135,10 @@ export default function HeroSlider({
     return <div className={`relative ${heightClass} overflow-hidden ${className}`} style={{ maxWidth: '100%', width: '100%' }} suppressHydrationWarning />;
   }
 
+  const previousIndex = (currentSlide - 1 + slides.length) % slides.length;
+  const previousImage = slides[previousIndex]?.image || '';
+  const cycleStep = currentSlide % 3; // 0: split, 1: right, 2: left
+
   return (
     <div className={`relative ${heightClass} overflow-hidden ${className}`} style={{ maxWidth: '100%', width: '100%' }}>
       {/* Slides */}
@@ -157,6 +161,52 @@ export default function HeroSlider({
             
             {/* Overlay */}
             <div className={`absolute inset-0 ${overlayClass}`}></div>
+
+            {/* Combo transition: Photo split → droite → gauche (utilise l'image précédente) */}
+            {index === currentSlide && previousImage && (
+              <>
+                {cycleStep === 0 && (
+                  <>
+                    <div
+                      key={`combo-split-L-${currentSlide}`}
+                      className="absolute top-0 bottom-0 right-1/2 w-1/2 animate-curtain-split-left-slow"
+                      style={{
+                        backgroundImage: `url('${previousImage}')`,
+                        backgroundRepeat: 'no-repeat',
+                        backgroundPosition: 'left center',
+                        backgroundSize: '200% 100%',
+                        zIndex: 5 as unknown as number,
+                      }}
+                    />
+                    <div
+                      key={`combo-split-R-${currentSlide}`}
+                      className="absolute top-0 bottom-0 left-1/2 w-1/2 animate-curtain-split-right-slow"
+                      style={{
+                        backgroundImage: `url('${previousImage}')`,
+                        backgroundRepeat: 'no-repeat',
+                        backgroundPosition: 'right center',
+                        backgroundSize: '200% 100%',
+                        zIndex: 5 as unknown as number,
+                      }}
+                    />
+                  </>
+                )}
+                {cycleStep === 1 && (
+                  <div
+                    key={`combo-right-${currentSlide}`}
+                    className="absolute inset-0 bg-cover bg-center animate-curtain-right-slow"
+                    style={{ backgroundImage: `url('${previousImage}')`, zIndex: 5 as unknown as number }}
+                  />
+                )}
+                {cycleStep === 2 && (
+                  <div
+                    key={`combo-left-${currentSlide}`}
+                    className="absolute inset-0 bg-cover bg-center animate-curtain-left-slow"
+                    style={{ backgroundImage: `url('${previousImage}')`, zIndex: 5 as unknown as number }}
+                  />
+                )}
+              </>
+            )}
             
             {/* Content */}
             <div className={`relative z-10 h-full flex ${
