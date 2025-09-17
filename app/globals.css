@@ -158,3 +158,40 @@ a:hover {
   animation: explode 4s ease-in-out 0.5s forwards;
   transform-origin: center;
 } 
+
+/* ===== Hero transitions demo ===== */
+@keyframes kenburns-in {
+  0% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+.animate-kenburns-in { animation: kenburns-in 9s ease-out both; }
+
+@keyframes curtain-wipe {
+  0% { transform: translateX(0) skewX(-8deg); }
+  100% { transform: translateX(110%) skewX(-8deg); }
+}
+.animate-curtain-wipe { animation: curtain-wipe 900ms cubic-bezier(.2,.7,.2,1) forwards; }
+
+@keyframes wipe-blur-in {
+  0% { transform: translateX(-4%); filter: blur(6px); opacity: .0; }
+  100% { transform: translateX(0); filter: blur(0); opacity: 1; }
+}
+.animate-wipe-blur-in { animation: wipe-blur-in 800ms cubic-bezier(.2,.7,.2,1) both; }
+
+@keyframes parallax-pan {
+  0% { transform: translateX(-2%); }
+  100% { transform: translateX(2%); }
+}
+.animate-parallax-pan { animation: parallax-pan 9s ease-in-out infinite alternate; }
+
+@keyframes flash-duotone {
+  0% { opacity: .6; }
+  100% { opacity: 0; }
+}
+.animate-flash-duotone { animation: flash-duotone 120ms ease-out both; }
+
+@keyframes typo-fade-up {
+  0% { opacity: 0; transform: translateY(12px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-typo-fade-up { animation: typo-fade-up 420ms cubic-bezier(.2,.7,.2,1) both 150ms; }
