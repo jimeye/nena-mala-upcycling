@@ -190,12 +190,12 @@ a:hover {
 .animate-curtain-split-right { animation: curtain-split-right 1000ms cubic-bezier(.2,.7,.2,1) forwards; }
 
 /* Variantes lentes pour photo-curtain */
-.animate-curtain-left-slow { animation: curtain-from-left 2000ms cubic-bezier(.2,.7,.2,1) forwards; }
-.animate-curtain-right-slow { animation: curtain-from-right 2000ms cubic-bezier(.2,.7,.2,1) forwards; }
-.animate-curtain-top-slow { animation: curtain-from-top 2000ms cubic-bezier(.2,.7,.2,1) forwards; }
-.animate-curtain-bottom-slow { animation: curtain-from-bottom 2000ms cubic-bezier(.2,.7,.2,1) forwards; }
-.animate-curtain-split-left-slow { animation: curtain-split-left 2200ms cubic-bezier(.2,.7,.2,1) forwards; }
-.animate-curtain-split-right-slow { animation: curtain-split-right 2200ms cubic-bezier(.2,.7,.2,1) forwards; }
+.animate-curtain-left-slow { animation: curtain-from-left 3000ms cubic-bezier(.2,.7,.2,1) forwards; }
+.animate-curtain-right-slow { animation: curtain-from-right 3000ms cubic-bezier(.2,.7,.2,1) forwards; }
+.animate-curtain-top-slow { animation: curtain-from-top 3000ms cubic-bezier(.2,.7,.2,1) forwards; }
+.animate-curtain-bottom-slow { animation: curtain-from-bottom 3000ms cubic-bezier(.2,.7,.2,1) forwards; }
+.animate-curtain-split-left-slow { animation: curtain-split-left 3400ms cubic-bezier(.2,.7,.2,1) forwards; }
+.animate-curtain-split-right-slow { animation: curtain-split-right 3400ms cubic-bezier(.2,.7,.2,1) forwards; }
 
 @keyframes wipe-blur-in {
   0% { transform: translateX(-12%); filter: blur(14px); opacity: 0; }
